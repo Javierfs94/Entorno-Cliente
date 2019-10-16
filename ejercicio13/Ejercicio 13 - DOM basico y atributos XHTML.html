@@ -5,27 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="script.js"></script>
     <title>Ejercicio 13 - DOM básico y atributos XHTML</title>
-    <script type="text/javascript">
-        function anade() {
-            let elemento = document.createElement("li");
-            let texto = document.createTextNode("Elemento de prueba");
-            elemento.appendChild(texto);
 
-            let lista = document.getElementById("lista");
-            lista.appendChild(elemento);
-
-            let nuevoElemento = "<li>Texto de prueba</li>";
-            lista.innerHTML = lista.innerHTML + nuevoElemento;
-        }
-    </script>
 </head>
 
 <body>
     <noscript>
-                <p>Bienvenido al ejercicio</p>
-                <p>La página necesita para su funcionamiento el uso de JavaScript.
-              Si lo ha deshabilitado, por favor vuelve a activarlo.</p></noscript>
+        <p>Bienvenido al ejercicio</p>
+        <p>La página necesita para su funcionamiento el uso de JavaScript.
+        Si lo ha deshabilitado, por favor vuelve a activarlo.</p></noscript>
 
     <ul id="lista">
         <li>Lorem ipsum dolor sit amet</li>
@@ -34,7 +23,7 @@
         <li>Phasellus libero</li>
         <li>Maecenas nisl arcu</li>
     </ul>
-    <input type="button" value="Añadir elemento" onclick="if (!window.__cfRLUnblockHandlers) return false; anade();">
+    <input type="button" value="Añadir elemento" onclick="anade();">
 
 
 </body>
