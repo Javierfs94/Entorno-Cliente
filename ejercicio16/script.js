@@ -1,19 +1,18 @@
 function informacion(elEvento) {
-    var evento = elEvento || window.event;
+    let evento = elEvento;
 
     muestraInformacion();
 }
 
 function muestraInformacion(mensaje) {
     document.getElementById("info").innerHTML = '<h1>' + mensaje[0] + '</h1>';
-    for (var i = 1; i < mensaje.length; i++) {
+    for (let i = 1; i < mensaje.length; i++) {
         document.getElementById("info").innerHTML += '<p>' + mensaje[i] + '</p>';
     }
 }
 
 function tamanoVentanaNavegador() {
-    // Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
-    var dimensiones = [];
+    let dimensiones = [];
 
     if (typeof(window.innerWidth) == 'number') {
         // No es IE
