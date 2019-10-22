@@ -1,9 +1,14 @@
+/**
+ * Establece los límites de los carácteres introducidos
+ * @param {*} elEvento 
+ * @param {*} maximoCaracteres 
+ */
 function limita(elEvento, maximoCaracteres) {
-    var elemento = document.getElementById("texto");
+    let elemento = document.getElementById("texto");
 
     // Obtener la tecla pulsada
-    var evento = elEvento || window.event;
-    var codigoCaracter = evento.charCode || evento.keyCode;
+    let evento = elEvento;
+    let codigoCaracter = evento.charCode;
     // Permitir utilizar las teclas con flecha horizontal
     if (codigoCaracter == 37 || codigoCaracter == 39) {
         return true;
@@ -19,13 +24,18 @@ function limita(elEvento, maximoCaracteres) {
     }
 }
 
+/**
+ * Actualiza la información del cuadro de texto
+ * @param {*} maximoCaracteres 
+ */
 function actualizaInfo(maximoCaracteres) {
-    var elemento = document.getElementById("texto");
-    var info = document.getElementById("info");
+    let elemento = document.getElementById("texto");
+    let info = document.getElementById("info");
 
-    if (elemento.value.length >= maximoCaracteres) {
-        info.innerHTML = "Máximo " + maximoCaracteres + " caracteres";
-    } else {
+    if (elemento.value.length < maximoCaracteres) {
         info.innerHTML = "Puedes escribir hasta " + (maximoCaracteres - elemento.value.length) + " caracteres adicionales";
+    } else {
+        info.innerHTML = "Máximo " + maximoCaracteres + " caracteres";
+
     }
 }
