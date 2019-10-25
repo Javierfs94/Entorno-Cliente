@@ -1,13 +1,20 @@
-let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-alert(meses[0]);
-alert(meses[1]);
-alert(meses[2]);
-alert(meses[3]);
-alert(meses[4]);
-alert(meses[5]);
-alert(meses[6]);
-alert(meses[7]);
-alert(meses[8]);
-alert(meses[9]);
-alert(meses[10]);
-alert(meses[11]);
+/**
+ * Ejercicio 1
+ * 
+ * Crear un array llamado meses y que almacene el nombre de los doce meses del año. 
+ * Mostrar por pantalla los doce nombres utilizando la función alert().
+ * 
+ * @author Francisco Javier Frías Serrano
+ */
+
+{
+    /**
+     * Muestra los mensajes por consola
+     */
+    let mostrar = function() {
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        console.log(meses);
+    }
+
+    mostrar(); // Funcion para mostrar el mensaje del ejercicio
+}

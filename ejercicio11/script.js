@@ -1,5 +1,5 @@
 /**
- * Ejercicio 15
+ * Ejercicio 11
  * 
  * A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2];
  * 
@@ -9,9 +9,3 @@
  * 
  * @author Francisco Javier Frías Serrano
  */
-function muestraInformacion(mensaje) {
-    document.getElementById("info").innerHTML = '<h1>' + mensaje[0] + '</h1>';
-    for (let i = 1; i < mensaje.length; i++) {
-        document.getElementById("info").innerHTML += '<p>' + mensaje[i] + '</p>';
-    }
-}
