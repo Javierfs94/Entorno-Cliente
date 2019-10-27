@@ -1,11 +1,12 @@
 /**
  * Ejercicio 14
  * 
- * A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2];
+ * A partir de la página web proporcionada, completar el código JavaScript para que:
  * 
- * Determinar cual de los dos elementos de texto es mayor
- * Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
- * Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
+ * Cuando se pinche sobre el primer enlace, se oculte su sección relacionada
+ * Cuando se vuelva a pinchar sobre el mismo enlace, se muestre otra vez esa sección de contenidos
+ * Completar el resto de enlaces de la página para que su comportamiento sea idéntico al del primer enlace
+ * Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista: propiedad innerHTML)
  * 
  * @author Francisco Javier Frías Serrano
  */

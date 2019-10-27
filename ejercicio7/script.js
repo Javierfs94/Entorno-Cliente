@@ -1,23 +1,33 @@
 /**
- * Ejercicio 4
+ * Ejercicio 7
  * 
- * A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2];
- * 
- * Determinar cual de los dos elementos de texto es mayor
- * Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
- * Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
+ * El factorial de un número entero n es una operación matemática que consiste en multiplicar todos los factores n x (n-1) x (n-2) x ... x 1. Así, el factorial de 5 (escrito como 5!)
+ *  es igual a: 5! = 5 x 4 x 3 x 2 x 1 = 120
+ *  
+ * Utilizando la estructura for, crear un script que calcule el factorial de un número entero.
  * 
  * @author Francisco Javier Frías Serrano
  */
-let num = prompt("Introduzca un número positivo para calcular el factorial)");
-let resultado = 1;
 
-if (num < 0 || Number.isInteger(num)) {
-    alert("Número introducido no válido");
-} else {
-    for (let i = 1; i <= num; i++) {
-        resultado *= i;
+{
+    /**
+     * Muestra los mensajes por consola
+     */
+    let mostrar = function() {
+        let num = prompt("Introduzca un número positivo para calcular el factorial)");
+        let resultado = 1;
+        
+        if (num < 0 || Number.isInteger(num)) {
+            console.log("Número introducido no válido");
+        } else {
+            for (let i = 1; i <= num; i++) {
+                resultado *= i;
+            }
+        }
+        
+        console.log("El factorial de " + num + " es " + resultado);
     }
+
+    mostrar(); // Funcion para mostrar el mensaje del ejercicio
 }
 
-alert("El factorial de " + num + " es " + resultado);

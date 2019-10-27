@@ -1,21 +1,29 @@
 /**
- * Ejercicio 4
+ * Ejercicio 8
  * 
- * A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2];
- * 
- * Determinar cual de los dos elementos de texto es mayor
- * Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
- * Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
+ * Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto que indica si el número es par o impar. 
+ * Mostrar por pantalla el resultado devuelto por la función.
  * 
  * @author Francisco Javier Frías Serrano
  */
-function parOImpar(numero) {
-    if (numero % 2 == 0) {
-        console.log("Es par");
-    } else {
-        console.log("Es impar");
+
+{
+    /**
+     * Muestra los mensajes por consola
+     */
+    let mostrar = function() {
+        function parOImpar(numero) {
+            if (numero % 2 == 0) {
+                console.log("Es par");
+            } else {
+                console.log("Es impar");
+            }
+        }
+        
+        parOImpar(4);
+        parOImpar(7);
     }
+
+    mostrar(); // Funcion para mostrar el mensaje del ejercicio
 }
 
-parOImpar(4);
-parOImpar(7);

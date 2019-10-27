@@ -5,30 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ejercicio 11 - DOM básico</title>
-    <script>
-        window.onload = function() {
-            // Numero de enlaces de la pagina
-            let enlaces = document.getElementsByTagName("a");
-            console.log("El número de enlaces de la página es: " + enlaces);
-            // Direccion del penultimo enlace
-            console.log("La dirección del penultimo enlace es: " + enlaces[enlaces.length - 2]);
-            // Numero de enlaces que apuntan a http://prueba
-            let enlacesPrueba = document.getElementById("enlaces");
-            let contador = 0;
-            for (var i = 0; i < enlaces.length; i++) {
-                if (enlaces[i].href == "http://prueba" || enlaces[i].href == "http://prueba/") {
-                    contador++;
-                }
-            }
-            console.log("El número de enlaces de la página es: " + contador);
-            // Numero de enlaces del tercer parrafo
-            let parrafos = document.getElementsByTagName("p");
-            let enlacesParrafoTres = parrafos[2].getElementsByTagName("a");
-            console.log("El número de enlaces del tercer párrafo es: " +
-                enlacesParrafoTres.length);
-        }
-    </script>
+    <script src="script.js"></script>
+    <title>Ejercicio 11 - DOM básico</title>    
 </head>
 
 <body>

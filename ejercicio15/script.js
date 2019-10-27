@@ -1,11 +1,15 @@
 /**
  * Ejercicio 15
  * 
- * A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2];
+ * Completar el código JavaScript proporcionado para que:
  * 
- * Determinar cual de los dos elementos de texto es mayor
- * Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
- * Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
+ * Al mover el ratón en cualquier punto de la ventana del navegador, se muestre la posición del puntero respecto del navegador y respecto de la página.
+ * 
+ * Para mostrar los mensajes, utilizar la función muestraInformacion() deduciendo su funcionamiento a partir de su código fuente.
+ * Al pulsar cualquier tecla, el mensaje mostrado debe cambiar para indicar el nuevo evento y su información asociada.
+ * Añadir la siguiente característica al script: cuando se pulsa un botón del ratón, el color de fondo del cuadro de mensaje debe ser amarillo (#FFFFCC) y cuando se pulsa una tecla, 
+ * el color de fondo debe ser azul (#CCE6FF). Al volver a mover el ratón, el color de fondo vuelve a ser blanco.
+ * El color de fondo del cuadro de información cambia en función del tipo de evento
  * 
  * @author Francisco Javier Frías Serrano
  */

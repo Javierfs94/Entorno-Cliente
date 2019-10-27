@@ -1,38 +1,45 @@
 /**
- * Ejercicio 4
+ * Ejercicio 10
  * 
- * A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2];
- * 
- * Determinar cual de los dos elementos de texto es mayor
- * Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
- * Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
+ * Definir una función que determine si la cadena de texto que se le pasa como parámetro es un palíndromo, es decir, si se lee de la misma forma desde la izquierda y 
+ * desde la derecha. Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".
  * 
  * @author Francisco Javier Frías Serrano
  */
-function palindromo(cadena) {
-    let resultado = "La cadena \"" + cadena + "\" \n";
-    let cadenaOriginal = cadena.toLowerCase();
-    let letrasEspacios = cadenaOriginal.split("");
-    let cadenaSinEspacios = letrasEspacios.replace(" ", "");
-    cadenaSinEspacios.split("");
-    let letrasAlReves = cadenaSinEspacios.split("").reverse();
 
-    let iguales = true;
-    for (const i in letras) {
-        if (letras[i] == letrasAlReves[i]) {
-            //OK            
-        } else {
-            iguales = false;
+{
+    /**
+     * Muestra los mensajes por consola
+     */
+    let mostrar = function() {
+        function palindromo(cadena) {
+            let resultado = "La cadena \"" + cadena + "\" \n";
+            let cadenaOriginal = cadena.toLowerCase();
+            let letrasEspacios = cadenaOriginal.split("");
+            let cadenaSinEspacios = letrasEspacios.replace(" ", "");
+            cadenaSinEspacios.split("");
+            let letrasAlReves = cadenaSinEspacios.split("").reverse();
+        
+            let iguales = true;
+            for (const i in letras) {
+                if (letras[i] == letrasAlReves[i]) {
+                    //OK            
+                } else {
+                    iguales = false;
+                }
+            }
+        
+            if (iguales) {
+                resultado += " es un palíndromo";
+            } else {
+                resultado += " no es un palíndromo";
+            }
+            return resultado;
         }
+        
+        console.log(palindromo("Amor a Roma"));
+        console.log(palindromo("Mal ejemplo"));
     }
 
-    if (iguales) {
-        resultado += " es un palíndromo";
-    } else {
-        resultado += " no es un palíndromo";
-    }
-    return resultado;
+    mostrar(); // Funcion para mostrar el mensaje del ejercicio
 }
-
-console.log(palindromo("Amor a Roma"));
-console.log(palindromo("Mal ejemplo"));
