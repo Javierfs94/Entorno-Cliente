@@ -1,0 +1,28 @@
+:root {
+    --primario-color: rgb(236, 174, 40);
+}
+
+body {
+    font-family: "Roboto";
+    text-align: center;
+}
+
+header {
+    min-height: 75px;
+    text-align: center;
+    background-color: var(--primario-color);
+    margin-bottom: 20px;
+}
+
+main {
+    text-align: center;
+}
+
+span {
+    color: red;
+}
+
+footer {
+    background-color: var(--primario-color);
+    text-align: center;
+}

@@ -7,13 +7,30 @@
  * @author Francisco Javier Frías Serrano
  */
 
-let array = [];
-console.log(array[i]);
-let num = 10;
+{
 
-function annadirArray(num) {
-    for (let i = 0; i < num; i++) {
-        array.push(i);
-    }
+    let elementoLista;
+    let array = [];
+    let num = 10;
 
+    let recorrerArray = function(value, index, array) {
+        let elemento = document.createElement("li");
+        elemento.appendChild(document.createTextNode("Array[" + index + "]=" + value));
+        elementoLista.appendChild(elemento);
+    };
+
+    let annadirArray = function(numero) {
+        for (let i = 0; i < numero; i++) {
+            array.push(i);
+        }
+    };
+
+    let init = function() {
+        elementoLista = document.getElementById("lista");
+        annadirArray(num);
+        elementoLista.innerHTML = array;
+        array.forEach(recorrerArray);
+    };
+
+    document.addEventListener("DOMContentLoaded", init);
 }

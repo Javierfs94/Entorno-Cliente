@@ -10,7 +10,6 @@
  * @author Francisco Javier Frías Serrano
  */
 
-
 {
 
     let miVentana;
