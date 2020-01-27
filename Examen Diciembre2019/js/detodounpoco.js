@@ -5,13 +5,23 @@
  */
 
 {
-    const DIA_SEMANA = new Array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+    const DIA_SEMANA = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", );
+
+
+    /**
+     * Devuelve la fecha actual
+     */
+    let getFechaActual = function() {
+        return new Date();
+    }
+
+
 
     /**
      * Devuelve el dia de la semana
      */
-    let getDiaActual = function() {
-        return DIA_SEMANA[new Date().getDay() - 1];
+    let getDiaActual = function(i) {
+        return DIA_SEMANA[i];
     }
 
     /**
@@ -27,7 +37,7 @@
      * Devuelve la hora actual con su mensaje
      */
     let getHoraActual = function() {
-        let fecha = new Date();
+        let fecha = getFechaActual();
         let hora = fecha.getHours();
         let minutos = fecha.getMinutes();
 
@@ -50,7 +60,7 @@
         let salir = document.getElementById("salir");
 
         informa.addEventListener("click", function() {
-            info.innerHTML = "<p>" + getDiaActual() + "</p><p>" + getHoraActual() + "</p>";
+            info.innerHTML = "<p>" + getDiaActual(getFechaActual().getDay()) + "</p><p>" + getHoraActual() + "</p>";
         });
 
         salir.addEventListener("click", function() {

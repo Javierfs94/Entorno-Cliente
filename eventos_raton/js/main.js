@@ -6,7 +6,7 @@
 
 {
     let canvas;
-    let arrayColores = ["#EF21FF", "#3870FF", "#FFC312", "#2EFF4E", "#FFFF22", "#FF6E21", "#A77D3B", "#9819FF", "#735CDD", "#FF3532"];
+    let colores = ["#EF21FF", "#3870FF", "#FFC312", "#2EFF4E", "#FFFF22", "#FF6E21", "#A77D3B", "#9819FF", "#735CDD", "#FF3532"];
 
     /**
      * Inicia la ejecución del código JavaScript
@@ -28,7 +28,7 @@
      * Devuelve un color aleatorio
      */
     function obtenerColorAleatorio() {
-        return Math.floor(Math.random() * arrayColores.length + 0);
+        return Math.floor(Math.random() * colores.length + 0);
     }
 
     /**
@@ -46,9 +46,9 @@
         if (canvas.getContext) {
             let contexto = canvas.getContext('2d', { alpha: false });
             if (arguments.length === 1) {
-                contexto.fillStyle = '#FF3532';
+                contexto.fillStyle = colores[obtenerColorAleatorio()];
             } else {
-                contexto.fillStyle = arrayColores[color];
+                contexto.fillStyle = colores[color];
             }
             contexto.fillRect(0, 0, 400, 400);
             contexto.fillStyle = "#fff";

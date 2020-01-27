@@ -12,6 +12,7 @@ header {
     text-align: center;
     background-color: var(--primario-color);
     margin-bottom: 20px;
+    padding: 1em 0 1em 0;
 }
 
 main {
@@ -25,4 +26,7 @@ span {
 footer {
     background-color: var(--primario-color);
     text-align: center;
+    min-height: 20px;
+    padding: 1em 0 1em 0;
+    margin-top: 1em;
 }
