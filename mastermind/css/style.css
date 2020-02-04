@@ -4,9 +4,15 @@
 }
 
 body {
+    margin: 0;
+    padding: 1em;
     background-color: var(--primario-color);
     color: white;
     font-family: "Roboto";
+}
+
+header h1 {
+    text-align: center;
 }
 
 a {
@@ -54,7 +60,7 @@ button:active {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-section#listaBolas {
+#listaBolas {
     padding: 1em;
     border: 3px solid var(--primario-color);
     border-radius: 0px 10px 0px 0px;
@@ -62,7 +68,7 @@ section#listaBolas {
     justify-content: center;
 }
 
-div#ganar {
+#ganar {
     display: none;
     position: absolute;
     background-color: var(--primario-color);
@@ -72,6 +78,30 @@ div#ganar {
     border-radius: 20px;
     text-align: center;
     color: black;
+}
+
+#divGanar {
+    display: none;
+}
+
+#comprobar {
+    border-radius: 100%;
+    height: 50px;
+    bottom: 0px;
+    left: 5px;
+    border: 4px solid #473B2E;
+    color: #473B2E;
+}
+
+#comprobar span {
+    padding: 10px 10px 10px;
+    display: inline-block;
+}
+
+#limpiar {
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 #tablero {
@@ -91,42 +121,42 @@ div#ganar {
     border: 1px solid var(--primario-color);
 }
 
-div#blanca {
+#blanca {
     background-color: white;
     margin-top: 10px;
 }
 
-div#negra {
+#negra {
     background-color: black;
     margin-top: 10px;
 }
 
-div#roja {
+#roja {
     background-color: red;
     margin-top: 10px;
 }
 
-div#marron {
+#marron {
     background-color: brown;
     margin-top: 10px;
 }
 
-div#amarilla {
+#amarilla {
     background-color: yellow;
     margin-top: 10px;
 }
 
-div#verde {
+#verde {
     background-color: green;
     margin-top: 10px;
 }
 
-div#naranja {
+#naranja {
     background-color: orange;
     margin-top: 10px;
 }
 
-div#azul {
+#azul {
     background-color: blue;
     margin-top: 10px;
 }
@@ -157,14 +187,14 @@ footer span {
     color: black;
 }
 
-div#botones button {
+#botones button {
     border-radius: 100%;
     height: 50px;
     border: 4px solid #473B2E;
     color: #473B2E;
 }
 
-div#botones span {
+#botones span {
     padding: 10px 10px 10px;
     display: inline-block;
 }

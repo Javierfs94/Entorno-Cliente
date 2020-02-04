@@ -1,5 +1,5 @@
 /**
- * Ejercicio 1 Arrays
+ * Ejercicio 7 Arrays
  * 
  * Indica los tres argumentos del método forEach a un array. Demuestra su uso mediante un ejemplo.
  * 
