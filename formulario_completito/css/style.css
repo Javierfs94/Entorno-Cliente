@@ -1,32 +1,31 @@
-:root {
-    --primario-color: rgb(236, 174, 40);
-}
-
 body {
-    font-family: "Roboto";
-    text-align: center;
+  font-family: "Roboto";
 }
 
 header {
-    min-height: 75px;
-    text-align: center;
-    background-color: var(--primario-color);
-    margin-bottom: 20px;
-    padding: 1em 0 1em 0;
+  min-height: 75px;
+  text-align: center;
+  background-color: orange;
+  margin-bottom: 20px;
+  padding: 1em 0 1em 0;
 }
 
 main {
-    text-align: center;
+  margin: 0.5em;
+}
+
+form {
+  width: 40%;
 }
 
 span {
-    color: red;
+  color: red;
 }
 
 footer {
-    background-color: var(--primario-color);
-    text-align: center;
-    min-height: 20px;
-    padding: 1em 0 1em 0;
-    margin-top: 1em;
+  background-color: orange;
+  text-align: center;
+  min-height: 20px;
+  padding: 1em 0 1em 0;
+  margin-top: 1em;
 }

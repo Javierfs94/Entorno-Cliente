@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(() => {
     $("a.enlacealmacenar").click(function(evento) {
         evento.preventDefault();
         var valorAlmacenado = $(this).data("midato");

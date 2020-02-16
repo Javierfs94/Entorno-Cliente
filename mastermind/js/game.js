@@ -101,7 +101,7 @@
 
 
         // Añadimos los correspondientes ids
-        fila.id = "fila" + contador;
+        fila.id = "fila";
         filaCasillas.id = casillas;
         pistas.id = pistas;
 
@@ -227,13 +227,7 @@
      * Permite reiniciar el juego
      */
     let reiniciar = function() {
-        borrarFilas();
-        divGanar.style = "display: none;"
-        botonComprobar.setAttribute("enabled", "true");
-        masterMind.init();
-        masterMind.mostrar();
-        crearFila();
-        contadorFilas = 0;
+        location.reload();
     }
 
     /**

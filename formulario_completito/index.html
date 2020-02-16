@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="js/main.js"></script>
+    <script src="js/validar.js"></script>
     <title>Formulario completito</title>
 </head>
 <noscript>
@@ -24,46 +25,49 @@
         <h1>Formulario completito</h1>
     </header>
 
-    <form method="POST">
-        <fieldset>
-            <legend>Registro</legend>
-            <input type="text" id="nombre" expresion="nombre" placeholder="Nombre"><br>
-            <span id="errornombre"></span><br>
+    <main>
+        <form method="POST">
+            <fieldset>
+                <legend>Registro</legend>
+                <input type="text" id="nombre" expresion="nombre" placeholder="Nombre"><br>
+                <span class="span_error" id="errornombre"></span><br>
 
-            <input type="text" id="edad" expresion="edad" placeholder="Edad"><br>
-            <span id="erroredad"></span>
+                <input type="text" id="edad" expresion="edad" placeholder="Edad"><br>
+                <span id="erroredad"></span>
 
-            <div id="inputSexo">
-                <p id="parrafoSexo">Sexo</p>
-                <input type="radio" name="sexo" value="Hombre"><label>Hombre</label>
-                <input type="radio" name="sexo" value="Mujer"><label>Mujer</label><br>
-                <span id="errorsexo"></span>
-            </div>
-            <br>
-            <input type="text" id="DNI" expresion="dni" placeholder="DNI"><br>
-            <span id="errorDNI"></span><br>
+                <div id="inputSexo">
+                    <p id="parrafoSexo">Sexo</p>
+                    <input type="radio" name="sexo" value="Hombre"><label>Hombre</label>
+                    <input type="radio" name="sexo" value="Mujer"><label>Mujer</label><br>
+                    <span class="span_error" id="errorsexo"></span>
+                </div>
+                <br>
+                <input type="text" id="DNI" expresion="dni" placeholder="DNI"><br>
+                <span class="span_error" id="errorDNI"></span><br>
 
-            <input type="text" id="email" expresion="email" placeholder="Correo electrónico"><br>
-            <span id="erroremail"></span><br>
+                <input type="text" id="email" expresion="email" placeholder="Correo electrónico"><br>
+                <span class="span_error" id="erroremail"></span><br>
 
-            <p id="spanFechaNacimiento"></p>
-            <input type="text" id="fechaNacimiento" expresion="fecha" placeholder="Fecha de Nacimiento"><br>
-            <span id="errorfechaNacimiento"></span><br>
+                <p id="spanFechaNacimiento"></p>
+                <input type="text" id="fechaNacimiento" expresion="fecha" placeholder="Fecha de Nacimiento"><br>
+                <span class="span_error" id="errorfechaNacimiento"></span><br>
 
-            <input type="number" id="telefono" expresion="telefono" placeholder="Teléfono"><br>
-            <span id="errortelefono"></span><br>
+                <input type="number" id="telefono" expresion="telefono" placeholder="Teléfono"><br>
+                <span class="span_error" id="errortelefono"></span><br>
 
-            <input type="text" id="cuentaCorriente" expresion="cuentaCorriente" placeholder="Cuenta corriente"><br>
-            <span id="errorcuentaCorriente"></span><br>
+                <input type="text" id="cuentaCorriente" expresion="cuentaCorriente" placeholder="Cuenta corriente"><br>
+                <span class="span_error" id="errorcuentaCorriente"></span><br>
 
-            <input type="text" id="direccionWeb" expresion="direccionWeb" placeholder="Dirección web"><br>
-            <span id="errordireccionWeb"></span><br>
+                <input type="text" id="direccionWeb" expresion="direccionWeb" placeholder="Dirección web"><br>
+                <span class="span_error" id="errordireccionWeb"></span><br>
 
-            <input type="checkbox" id="terminos"><label> Acepto los términos y condiciones</label><br>
-            <span id="errorterminos"></span><br>
-            <button id="enviar">Enviar</button>
-        </fieldset>
-    </form>
+                <input type="checkbox" id="terminos"><label> Acepto los términos y condiciones</label><br>
+                <span class="span_error" id="errorterminos"></span><br>
+                <button id="enviar">Enviar</button>
+            </fieldset>
+        </form>
+    </main>
+
 
     <footer>
         <p>Práctica realizada por Francisco Javier Frías Serrano</p>

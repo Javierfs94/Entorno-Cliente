@@ -1,4 +1,3 @@
-  
 Recibido el siguiente dato:
 <br>
 Nombre: <?php echo $_POST["nombre"];?>

@@ -1,11 +1,9 @@
-{
-    function init() {
-        $("#capa").mouseenter(function(evento) {
+$(() => {
+    $("#capa")
+        .mouseenter(function(evento) {
             $("#mensaje").css("display", "block");
-        });
-        $("#capa").mouseleave(function(evento) {
+        })
+        .mouseleave(function(evento) {
             $("#mensaje").css("display", "none");
         });
-    }
-    window.addEventListener("DOMContentLoaded", init);
-}
+});

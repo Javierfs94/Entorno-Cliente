@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(() => {
     $("#guardar").click(function(evento) {
         var valor = document.formul.valor.value;
         //Esta misma línea de código se puede codificar así también con jQuery

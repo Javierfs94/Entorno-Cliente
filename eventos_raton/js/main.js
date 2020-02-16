@@ -5,7 +5,6 @@
  */
 
 {
-    let canvas;
     let colores = ["#EF21FF", "#3870FF", "#FFC312", "#2EFF4E", "#FFFF22", "#FF6E21", "#A77D3B", "#9819FF", "#735CDD", "#FF3532"];
 
     /**
@@ -13,7 +12,7 @@
      */
     function init() {
 
-        canvas = Array.from(document.getElementsByTagName("canvas"));
+        let canvas = Array.from(document.getElementsByTagName("canvas"));
 
         canvas.forEach(function(elemento) {
             elemento.addEventListener(elemento.getAttribute("id"), function(event) {
