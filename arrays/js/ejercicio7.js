@@ -1,7 +1,7 @@
 /**
  * Ejercicio 7 Arrays
  * 
- * Indica los tres argumentos del método forEach a un array. Demuestra su uso mediante un ejemplo.
+ * Crea una función que elimine todos los undefined de un array
  * 
  * @author Francisco Javier Frías Serrano
  */
