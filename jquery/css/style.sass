@@ -1,25 +1,41 @@
-body
-    font-family: "Roboto"
+$color1: rgb(224, 204, 16)
+
+*
     margin: 0
     padding: 0
-
+    
+body
+    font-family: "Roboto"
 
 header
-    margin: 1em
+    margin-bottom: 1em
+    padding: 1em
     text-align: center
-
+    background-color: $color1
 
 main
     text-align: center
+    @media screen and (min-width:768px)
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(3, 1fr)
     div
-        ul
-            list-style: none
-            li
-                margin: 0.5em 0
-                a
-                    text-decoration: none
-                    color: blue
+        div
+            padding: 1em
+            
+            h3
+                text-align: center
+
+            ul
+                list-style: none
+                li
+                    margin: 0.5em 0
+                    a
+                        text-decoration: none
+                        color: blue
 
 footer
-    margin: 1em
+    background-color: $color1
+    margin-top: 1em
+    padding: 0.25em
     text-align: center
