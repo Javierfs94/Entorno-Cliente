@@ -9,14 +9,15 @@
     <meta name="keywords" content="fp,js,desarrollo-cliente,gran-capitan,cordoba">
     <meta name="author" content="Francisco Javier Frías Serrano">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/mastermind.js"></script>
     <script src="js/game.js"></script>
     <title>Mastermind</title>
-
 </head>
 
 <body>
@@ -28,24 +29,22 @@
         <h1>Mastermind</h1>
     </header>
 
-    <main>
+    <main id="main">
         <section id="tablero">
-            <div id="divGanar">
-                <h1>¡Has ganado!</h1>
-                <button id="botonNuevaPartida"><span><i class="material-icons">cached</i></span></button>
-                <button id="botonSalir"><i class="material-icons">exit_to_app</i></button>
+            <div id="divGanar" title="¡Has ganado!">
+                <p>Quieres volver a jugar?</p>
             </div>
         </section>
 
         <section id="listaBolas">
-            <div class="bolas" id="blanca"></div>
-            <div class="bolas" id="negra"></div>
-            <div class="bolas" id="roja"></div>
-            <div class="bolas" id="marron"></div>
-            <div class="bolas" id="amarilla"></div>
-            <div class="bolas" id="verde"></div>
-            <div class="bolas" id="naranja"></div>
-            <div class="bolas" id="azul"></div>
+            <div class="bolas" id="white"></div>
+            <div class="bolas" id="black"></div>
+            <div class="bolas" id="red"></div>
+            <div class="bolas" id="brown"></div>
+            <div class="bolas" id="yellow"></div>
+            <div class="bolas" id="green"></div>
+            <div class="bolas" id="orange"></div>
+            <div class="bolas" id="blue"></div>
         </section>
 
     </main>
