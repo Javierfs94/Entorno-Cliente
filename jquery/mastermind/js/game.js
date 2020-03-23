@@ -14,21 +14,36 @@
      * Pinta una casilla de un color según el id introducido por parámetro.
      */
     let pintarCasilla = function() {
-        $(".vacia").first().css("background-color", this.id).removeClass("vacia");
-        $(this).effect("shake");
-        $($casillas[i]).on("click", limpiarFicha);
 
-        /*    for (let i = 0; i < $casillas.length; i++) {
-               if (estaVacia(i)) {
-                   $casillas[i].style.backgroundColor = this.id;
-                   $(this).effect("shake");
-                   $($casillas[i]).on("click", limpiarFicha);
-                   if (puntero < 4) {
-                       puntero++;
-                   }
-                   break;
-               }
-           } */
+        for (let i = 0; i < $casillas.length; i++) {
+
+            if (estaVacia(i)) {
+                $casillas[i].style.backgroundColor = this.id;
+                $(this).effect("shake");
+                $($casillas[i]).on("click", limpiarFicha);
+                avanzarPuntero()
+                break;
+            }
+        }
+    }
+
+    /**
+     * Avanza una posición el puntero
+     */
+    let avanzarPuntero = function() {
+        if (puntero < 4)
+            puntero++;
+    }
+
+    /**
+     * Comprueba si la casilla está vacia
+     *
+     * @param  {int}  index 
+     * @return {boolean} true o false
+     */
+    let estaVacia = function(index) {
+        let casillaActual = $casillas[index];
+        return casillaActual.style.backgroundColor == "transparent" || casillaActual.style.backgroundColor == "";
     }
 
     /**
@@ -53,7 +68,7 @@
 
         // Generamos las casillas
         for (let i = 0; i < NUM_CASILLAS; i++) {
-            html += "<div class='casilla casilla" + num_lineas + " vacia'></div>";
+            html += "<div class='casilla casilla" + num_lineas + "'></div>";
         }
         html += "</div><div id='pistas'>"
 
@@ -61,7 +76,6 @@
         for (let i = 0; i < NUM_CASILLAS; i++) {
             html += "<div class='casillaPista casillaPista" + num_lineas + "'></div>";
         }
-
         html += "</div></div>";
         $('#tablero').append(html);
         nuevoTurno();
@@ -216,5 +230,5 @@
         $(".bolas").click(pintarCasilla);
     };
 
-    $(init);
+    $().ready(init);
 }

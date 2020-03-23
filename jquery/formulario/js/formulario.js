@@ -1,42 +1,80 @@
 /**
- * Plugin de validación de formulario
+ * Archivo principal
  * 
  * @author Francisco Javier Frías Serrano
  */
 
-$.fn.formulario = function(estilo) {
+$(document).ready(function() {
+    $.fn.formulario = function() {
+        if (this.attr("tipo") == "nombre" || this.attr("tipo") == "apellido") {
+            $("#mensaje").css("background-color", "#ffDEDE");
+            $("#mensaje").css("color", "#ff0000");
+            $("#mensaje").css("border", "2px solid #ffD3D7");
+        }
 
-    const EXPRESIONES = {
-        nombre = new RegExp(""),
-        apellidos = new RegExp(""),
-        correo = new RegExp(""),
-    };
+        if ((this.attr("tipo") == "correo")) {
+            $("#mensaje").css("background-color", "#ffDEDE");
+            $("#mensaje").css("color", "#ff0000");
+            $("#mensaje").css("border", "2px solid #ffD3D7");
 
-    const ESTILO_DEFAULT = {
-        color: "#ff0000",
-        "background-color": "#ffDEDE",
-        border: "2px solid #ffD3D7"
-    };
+        }
+    }
 
-    let settings = $.extends({}, ESTILO_DEFAULT, estilo);
-    let inputErrores = "";
-    $("input[type='text']", $(this)).blur(function() {
-            if (!EXPRESIONES[$(this).attr("tipo")].test($(this).val())) {
-                $(this).css(settings);
-                inputErrores = $(this);
-            } else {
-                $(this).removeAtrr('style');
-                inputErrores = "";
+    $("button").click(() => {
+        console.log("Boton pulsado");
+
+    });
+
+    $("input").focus(function() {
+        console.log($(this).attr("tipo"));
+    });
+
+    $("input").blur(function() {
+        $(this).formulario();
+    });
+
+});
+
+{
+    let inputs = [];
+    let spans;
+    let collectionSpan = new Map();
+
+    function init() {
+        spans = document.getElementsByTagName("span");
+        for (elemento of spans) {
+            collectionSpan.set(elemento.id, elemento);
+        }
+        inputs = document.querySelectorAll("input[type='text']");
+        checkBox = document.getElementById("terminos");
+        for (elemento of inputs) {
+            elemento.addEventListener("blur", validar.Input.bind(null, elemento, collectionSpan.get("error" + elemento.id)));
+        }
+        document.getElementById("enviar").addEventListener("click", (event) => {
+            event.preventDefault();
+            inputsErroneos = []
+            for (elemento of inputs) {
+                validar.Input(elemento, collectionSpan.get("error" + elemento.id));
             }
-
-        })
-        .focus(function() {
-            $(this).removeAtrr('style');
+            chequear();
         });
-
-    $(this).on()
-
+    }
 
 
+    function chequear() {
+        if (inputsErroneos.length != 0) {
+            inputsErroneos[0].focus();
+        } else {
+            limpiarTodo();
+        }
+    }
 
+    function limpiarTodo() {
+        for (elemento of inputs) {
+            elemento.value = "";
+            collectionSpan.get("error" + elemento.id).textContent = "";
+        }
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
 }

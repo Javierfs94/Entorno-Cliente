@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/formulario.js"></script>
+    <script src="js/validar.js"></script>
     <title>Plugin para un formulario</title>
 </head>
 
@@ -28,27 +28,16 @@
     </header>
 
     <main>
-        <div>
-            <h2>Formulario</h2>
-            <form id="form1">
-                <label><span>Nombre </span><input type="text" tipo="nombre"></label>
-                <label><span>Apellido </span><input type="text" tipo="apellido"></label>
-                <label><span>Correo </span><input type="text" tipo="correo"></label>
-                <label><textarea cols="30" rows="10"></textarea></label>
-                <label><input type="submit" value="Enviar"></label>
-            </form>
-        </div>
-        <div>
-            <h2>Formulario</h2>
-            <form id="form2">
-                <label><span>Nombre </span><input type="text" tipo="nombre"></label>
-                <label><span>Apellido </span><input type="text" tipo="apellido"></label>
-                <label><span>Correo </span><input type="text" tipo="correo"></label>
-                <label><textarea cols="30" rows="10"></textarea></label>
-                <label><input type="submit" value="Enviar"></label>
-            </form>
-        </div>
-
+        <form action="" method="POST">
+            <input type="text" tipo="nombre" id="nombre" placeholder="Nombre"> <br>
+            <span class="span_error" id="error_nombre"></span><br>
+            <input type="text" tipo="apellido" id="apellido" placeholder="Apellido"> <br>
+            <span class="span_error" id="error_apellido"></span><br>
+            <input type="text" tipo="correo" id="correo" placeholder="Correo"> <br>
+            <span class="span_error" id="error_correo"></span><br>
+            <textarea placeholder="Mensaje" id="mensaje" cols="30" rows="10"></textarea> <br>
+            <button type="submit" id="enviar">Enviar</button>
+        </form>
     </main>
 
     <footer>
