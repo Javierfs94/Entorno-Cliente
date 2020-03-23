@@ -14,25 +14,62 @@ header
     background-color: $color1
 
 main
-    text-align: center
-    @media screen and (min-width:768px)
-        display: grid
-        grid-template-columns: repeat(2, 1fr)
-        grid-template-columns: repeat(3, 1fr)
-    div
+    div#tabs
+        ul
+            list-style: none
+    div#javascript-container
+        text-align: center
+        @media screen and (min-width:768px)
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
         div
-            padding: 1em
-            
-            h3
-                text-align: center
-
-            ul
-                list-style: none
+            div
+                padding: 1em
+                h3
+                    text-align: center
+                ul
+                    list-style: none
                 li
                     margin: 0.5em 0
                     a
                         text-decoration: none
                         color: blue
+
+    div#jquery-container
+        text-align: center
+        @media screen and (min-width:768px)
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+        div
+            div
+                padding: 1em
+                h3
+                    text-align: center
+                ul
+                    list-style: none
+                li
+                    margin: 0.5em 0
+                    a
+                        text-decoration: none
+                        color: blue
+    div#examenes-container
+        text-align: center
+        @media screen and (min-width:768px)
+            display: grid
+            grid-template-columns: repeat(1, 1fr)
+        div
+            div
+                padding: 1em
+                h3
+                    text-align: center
+                ul
+                    list-style: none
+                li
+                    margin: 0.5em 0
+                    a
+                        text-decoration: none
+                        color: blue
+
 
 footer
     background-color: $color1
