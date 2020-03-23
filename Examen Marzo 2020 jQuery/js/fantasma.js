@@ -1,20 +1,14 @@
 /**
-* Clase Principal
-*
-* @author Francisco Javier Frías Serrano
-*/
+ * Clase Principal
+ *
+ * @author Francisco Javier Frías Serrano
+ */
 
-(function ($) {
-    $.fn.efecto = function (settings) {
-        let config = {'foo': 'bar'};
- 
-        if (settings) jQuery.extend(config, settings);
- 
-        this.each(function () {
-            // element-specific code here
-            
-        });
- 
+(function($) {
+    $.fn.fantasma = function() {
+        this.css("background-color", "green")
+            .fadeOut("slow")
+            .fadeIn("slow");
         return this;
     };
 })(jQuery);

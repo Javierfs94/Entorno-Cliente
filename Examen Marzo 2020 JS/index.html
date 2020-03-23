@@ -6,47 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Francisco Javier Frías Serrano">
     <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon">
+    <script src="js/alumno.js"></script>
     <script src="js/main.js"></script>
-	<script src="js/alumno.js"></script>
     <title>Examen JavaScript. Francisco Javier Frías Serrano</title>
 </head>
 
 
 <body>
-	<h1>Examen JavaScript. Francisco Javier Frías Serrano</h1>
-	<noscript>
+    <h1>Examen JavaScript. Francisco Javier Frías Serrano</h1>
+    <noscript>
 		<p>El navegador necesita JavaScript para su correcto funcionamiento</p>
 	</noscript>
-		<form>
-			<legend>Alta del alumno</legend>
-			<fieldset>
-				<div>
-					<label for ="nombre" >Nombre</label>
-					<input type = "text" id="nombre" placeholder="Nombre"/>
-					<span id = 'msj_nombre'></span>
-				</div>
-				<div>
-					<label for ="apellido1"  >Primer apellido </label>
-					<input type = "text" id="apellido1" placeholder="Apellido primero"/>
-					<span id = 'msj_apellido1'></span>
-				</div>
-				<div>
-					<label for ="apellido2" >Segundo Apellido </label>
-					<input type = "text" id="apellido2" placeholder="Apellido segundo"/>
-					<span id = 'msj_apellido2'></span>
-				</div>
-				<div>
-					<label for ="fecha" >Fecha de nacimiento</label>
-					<input type = "text" id="fecha" placeholder="dd-mm-aaaa"/>
-					<span id = 'msj_fecha'></span>
-				</div>
-			</fieldset>
-			
-			<div>
-				<input type = "button" value = "Crear"  id = 'crear'>
-				<input type = "reset" value = "Limpiar" id = 'limpiar'>
-			</div>
-		</form>
+    <form>
+        <legend>Alta del alumno</legend>
+        <fieldset>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Nombre" />
+                <span id='msj_nombre'></span>
+            </div>
+            <div>
+                <label for="apellido1">Primer apellido </label>
+                <input type="text" id="apellido1" placeholder="Apellido primero" />
+                <span id='msj_apellido1'></span>
+            </div>
+            <div>
+                <label for="apellido2">Segundo Apellido </label>
+                <input type="text" id="apellido2" placeholder="Apellido segundo" />
+                <span id='msj_apellido2'></span>
+            </div>
+            <div>
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="text" id="fecha" placeholder="dd-mm-aaaa" />
+                <span id='msj_fecha'></span>
+            </div>
+        </fieldset>
 
-		</body>
+        <div>
+            <input type="button" value="Crear" id='crear'>
+            <input type="reset" value="Limpiar" id='limpiar'>
+        </div>
+    </form>
+
+</body>
+
 </html>
