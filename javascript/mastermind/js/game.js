@@ -17,9 +17,7 @@
     let botonSalir;
     let botonReiniciar;
     let botonNuevaPartida;
-    let punteroComprobacion;
     let contadorFilas;
-    const NUM_CASILLAS = 4;
 
     /**
      * Pinta una casilla de un color según el id introducido por parámetro.
@@ -186,22 +184,6 @@
                 crearFila();
                 contadorFilas++;
             }
-        }
-    }
-
-
-    /**
-     * Borra las filas de bolas
-     */
-    let borrarFilas = function() {
-        for (let i = 0; i < contadorFilas; i++) {
-            fila = "fila" + i;
-            filaCasillas = "filaCasillas" + i;
-            pistas = "pistas" + i;
-
-            fila.removeChild(filaCasillas);
-            fila.removeChild(pistas);
-            tableroIzquierda.removeChild(fila);
         }
     }
 
