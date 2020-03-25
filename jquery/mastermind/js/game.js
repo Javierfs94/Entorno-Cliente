@@ -127,33 +127,35 @@
      * @param {string}  color
      */
     let pintarPistas = function(punteroComprobacion, color) {
-            $casillasPistas[punteroComprobacion].style = "background-color:" + color + ";";
-        }
-        /**
-         * Pinta de negro una casilla de pista en caso de que la ficha a comprobar coincida 
-         * en color y en sitio con la del juego.
-         * @param  {int}  punteroComprobacion  
-         * @return {int}  punteroComprobacíon
-         */
+        $casillasPistas[punteroComprobacion].style = "background-color:" + color + ";";
+    }
+
+    /**
+     * Pinta de negro una casilla de pista en caso de que la ficha a comprobar coincida 
+     * en color y en sitio con la del juego.
+     * @param  {int}  punteroComprobacion  
+     * @return {int}  punteroComprobacíon
+     */
     let pintarNegras = function() {
-            let punteroComprobacion = 0;
-            for (let i = 0; i < mastermind.enSuSitio; i++) {
-                pintarPistas(punteroComprobacion, "black");
-                punteroComprobacion++;
-            }
-            return punteroComprobacion;
+        let punteroComprobacion = 0;
+        for (let i = 0; i < mastermind.enSuSitio; i++) {
+            pintarPistas(punteroComprobacion, "black");
+            punteroComprobacion++;
         }
-        /**
-         * Pinta de blanco una casilla de pista en caso de que la ficha a comprobar coincida 
-         * en color pero no en sitio con la del juego.
-         * @param      {int}  punteroComprobacion
-         */
+        return punteroComprobacion;
+    }
+
+    /**
+     * Pinta de blanco una casilla de pista en caso de que la ficha a comprobar coincida 
+     * en color pero no en sitio con la del juego.
+     * @param      {int}  punteroComprobacion
+     */
     let pintarBlancas = function(punteroComprobacion) {
         for (let i = 0; i < mastermind.esta; i++) {
             pintarPistas(punteroComprobacion, "white");
             punteroComprobacion++;
         }
-        /* Una vez comprobamos las que están, debemos comprobar ek ganador*/
+        /* Una vez comprobamos las que están, debemos comprobar el ganador*/
         comprobarGanador(punteroComprobacion);
     }
 

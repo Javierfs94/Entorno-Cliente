@@ -1,14 +1,19 @@
 :root {
     --primario-color: #75624c;
-    --secundario-color: #473B2E;
 }
 
 body {
     margin: 0;
     padding: 1em;
-    background-color: var(--primario-color);
-    color: white;
     font-family: "Roboto";
+    font-size: 16px;
+}
+
+body>div {
+    background-color: #BD9F7A;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 header h1 {
@@ -22,7 +27,7 @@ a {
 main {
     background-color: #D2B188;
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     height: auto;
     border-radius: 10px;
     display: grid;
@@ -33,17 +38,6 @@ main {
 h1 {
     text-align: center;
     font-weight: bold;
-}
-
-body>div {
-    background-color: #BD9F7A;
-    width: 85%;
-    margin: auto;
-    text-align: center;
-    padding: 18px;
-    border: 3px solid #F0F0F0;
-    margin-top: 20px;
-    border-radius: 10px;
 }
 
 button {
@@ -107,7 +101,7 @@ button:active {
 #tablero {
     border: 3px solid var(--primario-color);
     border-radius: 10px 0px 0px;
-    padding: 1em;
+    padding: 2em;
     text-align: center;
     display: flex;
     flex-direction: column-reverse;
@@ -185,6 +179,12 @@ footer {
 
 footer span {
     color: black;
+}
+
+#botones {
+    bottom: 0;
+    left: 0;
+    position: fixed;
 }
 
 #botones button {
