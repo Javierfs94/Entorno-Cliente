@@ -38,16 +38,11 @@ masterMind = (function() {
         console.log(lineaMaquina);
     }
 
-    /**
-     * Comprueba si la combinación coincide y envia una pista
-     *
-     * @param {Array}  array 
-     */
-    let comprobarCombinacion = function(array) {
+
+    let darPista = function(array) {
         let copiaLineaMaquina = lineaMaquina.slice();
         esta = 0;
         enSuSitio = 0;
-
         array.forEach(function(element, index) {
             if (element == copiaLineaMaquina[index]) {
                 copiaLineaMaquina[index] = undefined;
@@ -64,10 +59,31 @@ masterMind = (function() {
             }
         });
 
+        return {
+            esta: esta,
+            enSuSitio: enSuSitio
+        }
+    }
+
+
+    /**
+     * Comprueba si la combinación coincide y envia una pista
+     *
+     * @param {Array}  array 
+     */
+    let comprobarCombinacion = function(array) {
+        let copiaLineaMaquina = lineaMaquina.slice();
+        let comprobacion = true;
+
+        for (let i = 0; i < 4; i++) {
+            if (copiaLineaMaquina[i] != array[i]) {
+                comprobacion = false;
+                break;
+            }
+        }
 
         return {
-            enSuSitio: enSuSitio,
-            esta: esta,
+            comprobacion: comprobacion,
         }
     }
 
@@ -82,6 +98,7 @@ masterMind = (function() {
     return {
         init: init,
         mostrar: mostrar,
-        comprobarCombinacion: comprobarCombinacion
+        comprobarCombinacion: comprobarCombinacion,
+        darPista: darPista
     };
 })();
