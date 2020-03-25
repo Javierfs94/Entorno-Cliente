@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Práctica de Plugin para un formulario jQuery">
+    <meta name="keywords" content="fp,js,jquery,desarrollo-cliente,gran-capitan,cordoba">
+    <meta name="author" content="Francisco Javier Frías Serrano">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/validar.js"></script>
+    <title>Plugin para un formulario</title>
+</head>
+
+<noscript>
+    Esta página requiere el uso de JavaScript para su correcto funcionamiento
+</noscript>
+
+<body>
+
+    <header>
+        <h1>Plugin para un formulario</h1>
+    </header>
+
+    <main>
+        <form action="" method="POST">
+            <input type="text" tipo="nombre" id="nombre" placeholder="Nombre"> <br>
+            <span class="span_error" id="error_nombre"></span><br>
+            <input type="text" tipo="apellido" id="apellido" placeholder="Apellido"> <br>
+            <span class="span_error" id="error_apellido"></span><br>
+            <input type="text" tipo="correo" id="correo" placeholder="Correo"> <br>
+            <span class="span_error" id="error_correo"></span><br>
+            <textarea placeholder="Mensaje" id="mensaje" cols="30" rows="10"></textarea> <br>
+            <button type="submit" id="enviar">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Práctica realizada por Francisco Javier Frías Serrano</p>
+    </footer>
+</body>
+
+</html>

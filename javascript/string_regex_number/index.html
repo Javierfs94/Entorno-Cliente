@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Francisco Javier Frías Serrano">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/script.js"></script>
+    <title>Ejercicios deString, RegExp y Number</title>
+</head>
+
+<body>
+    <noscript>
+        <p>La página necesita para su funcionamiento el uso de JavaScript.</p>
+    </noscript>
+
+    <h2>1. Sistemas numéricos: Crea una página que transforme de un sistema numérico a otro: binario, octal, decimal, hexadecimal.</h2>
+    <span>Introduce un número: </span><input type="text" id="numeroEjercicio1">
+    <br>
+    <h4>Seleccione cuál es la base del número introducido: </h4>
+    <input type="radio" id="decimal" name="radiobutton"> Decimal
+    <input type="radio" id="binario" name="radiobutton"> Binario
+    <input type="radio" id="octal" name="radiobutton"> Octal
+    <input type="radio" id="hexadecimal" name="radiobutton"> Hexadecimal
+    <br>
+    <br>
+    <input type="button" id="convertir" value="Convertir al resto de bases">
+    <br>
+    <br>
+    <div id="info1Number"></div>
+    <hr>
+
+    <h2>2. Suma y multiplicación: Crea una página que sume y multiplique independientemente del los sistemas de numeración.</h2>
+    <span>Introduce un primer número: </span><input type="text" id="numero1Ejercicio2">
+    <br>
+    <h4>Seleccione cuál es la base del primer número introducido: </h4>
+    <input type="radio" id="decimal" name="radiobutton"> Decimal
+    <input type="radio" id="binario" name="radiobutton"> Binario
+    <input type="radio" id="octal" name="radiobutton"> Octal
+    <input type="radio" id="hexadecimal" name="radiobutton"> Hexadecimal
+    <br>
+    <br>
+    <span>Introduce un segundo número: </span><input type="text" id="numero2Ejercicio2">
+    <br>
+    <h4>Seleccione cuál es la base del segundo número introducido: </h4>
+    <input type="radio" id="decimal2" name="radiobutton1"> Decimal
+    <input type="radio" id="binario2" name="radiobutton1"> Binario
+    <input type="radio" id="octal2" name="radiobutton1"> Octal
+    <input type="radio" id="hexadecimal2" name="radiobutton1"> Hexadecimal
+    <br>
+    <br>
+    <input type="button" id="sumar" value="Sumar">
+    <input type="button" id="multiplicar" value="Multiplicar">
+    <br>
+    <div id="info2Number"></div>
+    <hr>
+
+    <h2>3. Calcula el área de una circunferencia..</h2>
+    <span>Introduce el radio de la circunferencia: </span><input type="text" id="numeroEjercicio3">
+    <br>
+    <br>
+    <input type="button" id="area" value="Calcular área">
+    <br>
+    <div id="info3Number"></div>
+    <hr>
+
+    <h2>1. Capitaliza. Transforma entrada a otra similiar con la primera letra de cada palabra en mayúscula. </h2>
+    <input type="text" id="cadenaEjercicio1">
+    <br>
+    <div id="info1"></div>
+    <br>
+    <input type="button" id="boton1" value="Capitalizar">
+    <hr>
+
+    <h2>2. Invierte. Transforma entrada a otra similiar con las mayúsculas/minúsculas invertidas.</h2>
+    <input type="text" id="cadenaEjercicio2">
+    <br>
+    <div id="info2"></div>
+    <br>
+    <input type="button" id="boton2" value="Invierte">
+    <hr>
+
+    <h2>3. CamelCase. Transforma entrada a otra similiar con formato en Camel Case (hola amigos cómo estáis -> holaAmigosCómoEstáis)</h2>
+    <input type="text" id="cadenaEjercicio3">
+    <br>
+    <div id="info3"></div>
+    <br>
+    <input type="button" id="boton3" value="CamelCase">
+    <hr>
+
+    <h2>4. Sin CamelCase. Transforma entrada a otra similiar quitando el formato Camel Case (holaAmigosCómoEstáis -> hola amigos cómo estáis)</h2>
+    <input type="text" id="cadenaEjercicio4">
+    <br>
+    <div id="info4"></div>
+    <br>
+    <input type="button" id="boton4" value="Sin CamelCase">
+    <hr>
+
+    <h2>5. Finaliza... Averigua si una cadena acaba con otra.</h2>
+    Primera cadena: <input type="text" id="cadena1Ejercicio5"><br>Segunda cadena: <input type="text" id="cadena2Ejercicio5">
+    <br>
+    <div id="info5"></div>
+    <br>
+    <input type="button" id="boton5" value="¿Finaliza?">
+    <hr>
+
+    <h2>6. Empieza... Averigua si una cadena comienza con otra.</h2>
+    Primera cadena: <input type="text" id="cadena1Ejercicio6"><br>Segunda cadena: <input type="text" id="cadena2Ejercicio6">
+    <br>
+    <div id="info6"></div>
+    <br>
+    <input type="button" id="boton6" value="¿Empieza?">
+    <hr>
+
+    <h2>7. DNI. Indica error en caso de que la entrada no sea DNI válido. Usa expresiones regulares con grupos de captura en la comprobación de la letra</h2>
+    <input type="text" id="cadenaEjercicio7">
+    <br>
+    <div id="info7"></div>
+    <br>
+    <input type="button" id="boton7" value="Comprobar DNI">
+    <hr>
+
+    <h2>8. Matrículas. Extrae todas las matrículas válidas de una caja de texto.</h2>
+    <input type="text" id="cadenaEjercicio8">
+    <br>
+    <div id="info8"></div>
+    <br>
+    <input type="button" id="boton8" value="Comprobar matrícula">
+    <hr>
+
+    <h2>9. Códigos postales. Extrae todos los códigos postales válidos de una caja de texto.</h2>
+    <input type="text" id="cadenaEjercicio9">
+    <br>
+    <div id="info9"></div>
+    <br>
+    <input type="button" id="boton9" value="Comprobar código postal">
+    <hr>
+
+    <h2>10. Dirección MAC. Comprueba que una entrada sea una MAC válida.</h2>
+    <input type="text" id="cadenaEjercicio10">
+    <br>
+    <div id="info10"></div>
+    <br>
+    <input type="button" id="boton10" value="Comprobar dirección MAC">
+    <hr>
+
+    <h2>11. Dirección IP. Comprueba que una entrada sea una IP válida.</h2>
+    <input type="text" id="cadenaEjercicio11">
+    <br>
+    <div id="info11"></div>
+    <br>
+    <input type="button" id="boton11" value="Comprobar dirección IP">
+    <hr>
+
+    <footer>
+        <p>Ejercicio realizado por: <strong>Francisco Javier Frías Serrano</strong></p>
+    </footer>
+</body>
+
+</html>

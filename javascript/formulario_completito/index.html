@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Práctica de formulario completito">
+    <meta name="keywords" content="fp,js,desarrollo-cliente,gran-capitan,cordoba">
+    <meta name="author" content="Francisco Javier Frías Serrano">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <script src="js/validar.js"></script>
+    <title>Formulario completito</title>
+</head>
+<noscript>
+    Esta página requiere el uso de JavaScript para su correcto funcionamiento
+</noscript>
+
+<body>
+
+    <header>
+        <h1>Formulario completito</h1>
+    </header>
+
+    <main>
+        <form method="POST">
+            <fieldset>
+                <legend>Registro</legend>
+                <input type="text" id="nombre" expresion="nombre" placeholder="Nombre"><br>
+                <span class="span_error" id="errornombre"></span><br>
+
+                <input type="text" id="edad" expresion="edad" placeholder="Edad"><br>
+                <span id="erroredad"></span>
+
+                <div id="inputSexo">
+                    <p id="parrafoSexo">Sexo</p>
+                    <input type="radio" name="sexo" value="Hombre"><label>Hombre</label>
+                    <input type="radio" name="sexo" value="Mujer"><label>Mujer</label><br>
+                    <span class="span_error" id="errorsexo"></span>
+                </div>
+                <br>
+                <input type="text" id="DNI" expresion="dni" placeholder="DNI"><br>
+                <span class="span_error" id="errorDNI"></span><br>
+
+                <input type="text" id="email" expresion="email" placeholder="Correo electrónico"><br>
+                <span class="span_error" id="erroremail"></span><br>
+
+                <p id="spanFechaNacimiento"></p>
+                <input type="text" id="fechaNacimiento" expresion="fecha" placeholder="Fecha de Nacimiento"><br>
+                <span class="span_error" id="errorfechaNacimiento"></span><br>
+
+                <input type="number" id="telefono" expresion="telefono" placeholder="Teléfono"><br>
+                <span class="span_error" id="errortelefono"></span><br>
+
+                <input type="text" id="cuentaCorriente" expresion="cuentaCorriente" placeholder="Cuenta corriente"><br>
+                <span class="span_error" id="errorcuentaCorriente"></span><br>
+
+                <input type="text" id="direccionWeb" expresion="direccionWeb" placeholder="Dirección web"><br>
+                <span class="span_error" id="errordireccionWeb"></span><br>
+
+                <input type="checkbox" id="terminos"><label> Acepto los términos y condiciones</label><br>
+                <span class="span_error" id="errorterminos"></span><br>
+                <button id="enviar">Enviar</button>
+            </fieldset>
+        </form>
+    </main>
+
+
+    <footer>
+        <p>Práctica realizada por Francisco Javier Frías Serrano</p>
+    </footer>
+</body>
+
+</html>
