@@ -131,7 +131,7 @@
      */
     let pintarNegras = function() {
         let indice = 0;
-        for (let i = 0; i < masterMind.enSuSitio; i++) {
+        for (let i = 0; i < mastermind.enSuSitio; i++) {
             pintarPistas(indice, "black");
             indice++;
         }
@@ -144,7 +144,7 @@
      * @param      {int}  indice
      */
     let pintarBlancas = function(indice) {
-        for (let i = 0; i < masterMind.esta; i++) {
+        for (let i = 0; i < mastermind.esta; i++) {
             pintarPistas(indice, "white");
             indice++;
         }

@@ -47,6 +47,13 @@ masterMind = (function() {
         esta = 0;
         enSuSitio = 0;
 
+        for (let i = 0; i < 4; i++) {
+            if (copiaLineaMaquina[i] != array[i]) {
+                comprobacion = false;
+                break;
+            }
+        }
+
         array.forEach(function(element, index) {
             let indexOrigen = copiaLineaMaquina.indexOf(element);
             if (element == copiaLineaMaquina[index]) {
