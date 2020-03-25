@@ -95,6 +95,7 @@
     let comprobar = function() {
         if (puntero >= NUM_CASILLAS) {
             mastermind = masterMind.comprobarCombinacion(getColoresUsuario());
+            mastermind = masterMind.darPista(getColoresUsuario());
             pintarBlancas(pintarNegras());
         }
     }
