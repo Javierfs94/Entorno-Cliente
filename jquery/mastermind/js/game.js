@@ -111,7 +111,7 @@
      * del juego.
      */
     let comprobarGanador = function() {
-        if (masterMind.comprobarCombinacion()) {
+        if (masterMind.comprobarCombinacion(getColoresUsuario())) {
             openDialog();
         } else {
             crearFila();
