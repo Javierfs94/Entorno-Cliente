@@ -21,28 +21,22 @@
                 $casillas[i].style.backgroundColor = this.id;
                 $(this).effect("shake");
                 $($casillas[i]).on("click", limpiarFicha);
-                avanzarPuntero()
+                if (puntero < 4) {
+                    puntero++;
+                }
                 break;
             }
         }
     }
 
     /**
-     * Avanza una posición el puntero
-     */
-    let avanzarPuntero = function() {
-        if (puntero < 4)
-            puntero++;
-    }
-
-    /**
      * Comprueba si la casilla está vacia
      *
-     * @param  {int}  index 
+     * @param  {int}  indice 
      * @return {boolean} true o false
      */
-    let estaVacia = function(index) {
-        let casillaActual = $casillas[index];
+    let estaVacia = function(indice) {
+        let casillaActual = $casillas[indice];
         return casillaActual.style.backgroundColor == "transparent" || casillaActual.style.backgroundColor == "";
     }
 
@@ -122,40 +116,39 @@
     /**
      * Pinta una pista del color introducido por parámetro en la posición dada 
      *
-     * @param {int}  punteroComprobacion  posición
+     * @param {int}  indice  posición
      * @param {string}  color
      */
-    let pintarPistas = function(punteroComprobacion, color) {
-        $casillasPistas[punteroComprobacion].style = "background-color:" + color + ";";
+    let pintarPistas = function(indice, color) {
+        $casillasPistas[indice].style = "background-color:" + color + ";";
     }
 
     /**
      * Pinta de negro una casilla de pista en caso de que la ficha a comprobar coincida 
      * en color y en sitio con la del juego.
-     * @param  {int}  punteroComprobacion  
-     * @return {int}  punteroComprobacíon
+     * @param  {int}  indice  
      */
     let pintarNegras = function() {
-        let punteroComprobacion = 0;
+        let indice = 0;
         for (let i = 0; i < masterMind.enSuSitio; i++) {
-            pintarPistas(punteroComprobacion, "black");
-            punteroComprobacion++;
+            pintarPistas(indice, "black");
+            indice++;
         }
-        return punteroComprobacion;
+        return indice;
     }
 
     /**
      * Pinta de blanco una casilla de pista en caso de que la ficha a comprobar coincida 
      * en color pero no en sitio con la del juego.
-     * @param      {int}  punteroComprobacion
+     * @param      {int}  indice
      */
-    let pintarBlancas = function(punteroComprobacion) {
+    let pintarBlancas = function(indice) {
         for (let i = 0; i < masterMind.esta; i++) {
-            pintarPistas(punteroComprobacion, "white");
-            punteroComprobacion++;
+            pintarPistas(indice, "white");
+            indice++;
         }
         /* Una vez comprobamos las que están, debemos comprobar el ganador*/
-        comprobarGanador(punteroComprobacion);
+        comprobarGanador(indice);
     }
 
     /**

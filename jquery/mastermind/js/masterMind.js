@@ -38,7 +38,10 @@ masterMind = (function() {
         console.log(lineaMaquina);
     }
 
-
+    /**
+     * 
+     * @param {*} array 
+     */
     let darPista = function(array) {
         let copiaLineaMaquina = lineaMaquina.slice();
         esta = 0;
@@ -67,7 +70,7 @@ masterMind = (function() {
 
 
     /**
-     * Comprueba si la combinación coincide y envia una pista
+     * Comprueba si la combinación coincide
      *
      * @param {Array}  array 
      */
@@ -82,9 +85,7 @@ masterMind = (function() {
             }
         }
 
-        return {
-            comprobacion: comprobacion,
-        }
+        return comprobacion;
     }
 
     /**
