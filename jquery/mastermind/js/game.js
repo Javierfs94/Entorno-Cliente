@@ -109,10 +109,9 @@
     /**
      * Comprueba si la combinación de fichas del usuario es idéntica a la
      * del juego.
-     * @param  {int}  punteroComprobacion  
      */
-    let comprobarGanador = function(punteroComprobacion) {
-        if (punteroComprobacion == NUM_CASILLAS) {
+    let comprobarGanador = function() {
+        if (masterMind.comprobarCombinacion()) {
             openDialog();
         } else {
             crearFila();
@@ -138,7 +137,7 @@
      */
     let pintarNegras = function() {
         let punteroComprobacion = 0;
-        for (let i = 0; i < mastermind.enSuSitio; i++) {
+        for (let i = 0; i < masterMind.enSuSitio; i++) {
             pintarPistas(punteroComprobacion, "black");
             punteroComprobacion++;
         }
@@ -151,7 +150,7 @@
      * @param      {int}  punteroComprobacion
      */
     let pintarBlancas = function(punteroComprobacion) {
-        for (let i = 0; i < mastermind.esta; i++) {
+        for (let i = 0; i < masterMind.esta; i++) {
             pintarPistas(punteroComprobacion, "white");
             punteroComprobacion++;
         }
