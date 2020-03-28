@@ -41,7 +41,7 @@ h1 {
 }
 
 button {
-    margin-top: 10px;
+    margin: 0.5em;
     background-color: #E4F2E4;
     color: var(--primario-color);
 }
@@ -62,17 +62,9 @@ button:active {
     justify-content: center;
 }
 
-#ganar {
-    display: none;
-    position: absolute;
-    top: 1.25em;
-    width: 70%;
-    height: 200px;
-    color: black;
-}
-
 #divGanar {
     display: none;
+    color: black;
     background-color: var(--primario-color);
     border-radius: 20px;
     text-align: center;
@@ -84,6 +76,10 @@ button:active {
     border-radius: 0px 10px 0px 0px;
     align-items: center;
     justify-content: center;
+}
+
+#sectionIntentos p {
+    text-align: center;
 }
 
 #comprobar {
