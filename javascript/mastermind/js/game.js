@@ -17,7 +17,7 @@
     let botonReiniciar;
     let botonNuevaPartida;
     let contadorFilas;
-    let intentos = 0;
+    let intento = 0;
 
     /**
      * Pinta una casilla de un color según el id introducido por parámetro.
@@ -126,7 +126,8 @@
 
         nuevoTurno();
         contadorFilas++;
-        aumentarIntentos();
+        intento++;
+        intentos.innerHTML = "Intentos: " + intento;
     }
 
     /**
@@ -207,14 +208,6 @@
     }
 
     /**
-     * Aumenta los intentos realizados
-     */
-    let aumentarIntentos = function() {
-        spanIntentos.replaceWith(++intentos);
-    }
-
-
-    /**
      * Permite reiniciar el juego
      */
     let reiniciar = function() {
@@ -246,7 +239,7 @@
         botonNuevaPartida = document.getElementById("botonNuevaPartida");
         divGanar = document.getElementById("divGanar");
         divBotones = document.getElementById("botones");
-        spanIntentos = document.getElementById("intentos");
+        intentos = document.getElementById("intentos");
 
         //Eventos
         botonNuevaPartida.addEventListener("click", reiniciar);
