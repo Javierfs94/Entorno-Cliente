@@ -133,7 +133,7 @@
 
     let comprobar = function() {
         let coloresUsuario = [];
-        let punteroComprobacion = 0;
+        let indice = 0;
 
         for (let i = 0; i < casillas.length; i++) {
             if (casillas[i].style.backgroundColor == "red") {
@@ -160,26 +160,26 @@
             mastermind = masterMind.comprobarCombinacion(coloresUsuario);
 
             if (mastermind.enSuSitio > 0) {
-                while (punteroComprobacion < mastermind.enSuSitio) {
-                    casillasPistas[punteroComprobacion].style = "background-color: black;";
-                    punteroComprobacion++;
+                while (indice < mastermind.enSuSitio) {
+                    casillasPistas[indice].style = "background-color: black;";
+                    indice++;
                 }
             }
 
-            if (punteroComprobacion == 4) {
+            if (indice == 4) {
                 divGanar.style = "display: block;";
-                botonComprobar.setAttribute("disabled", "true");
+                botones.style.display = "none";
             }
 
             if (mastermind.esta > 0) {
                 for (let i = 0; i < mastermind.esta; i++) {
-                    casillasPistas[punteroComprobacion].style = "background-color: white;";
-                    punteroComprobacion++;
+                    casillasPistas[indice].style = "background-color: white;";
+                    indice++;
                 }
-                punteroComprobacion = 0;
+                indice = 0;
             }
 
-            if (punteroComprobacion != 4) {
+            if (indice != 4) {
                 crearFila();
                 contadorFilas++;
             }
@@ -225,6 +225,7 @@
         masterMind.init();
         masterMind.mostrar();
         num_lineas = 0;
+
         casillas = document.getElementsByClassName("casilla");
         casillasPistas = document.getElementsByClassName("casillaPista");
         colores = document.getElementsByClassName("bolas");
@@ -234,6 +235,7 @@
         botonSalir = document.getElementById("botonSalir");
         botonNuevaPartida = document.getElementById("botonNuevaPartida");
         divGanar = document.getElementById("divGanar");
+        divBotones = document.getElementById("botones");
 
         //Eventos
         botonNuevaPartida.addEventListener("click", reiniciar);
