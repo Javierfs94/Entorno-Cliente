@@ -9,6 +9,7 @@
     let num_lineas;
     let $divGanar;
     const NUM_CASILLAS = 4;
+    let intento = 0;
 
     /**
      * Pinta una casilla de un color según el id introducido por parámetro.
@@ -73,6 +74,8 @@
         html += "</div></div>";
         $('#tablero').append(html);
         nuevoTurno();
+        intento++;
+        intentos.innerHTML = "Intentos: " + intento;
     }
 
     /**
@@ -108,6 +111,7 @@
     let comprobarGanador = function() {
         if (masterMind.comprobarCombinacion(getColoresUsuario())) {
             openDialog();
+            botones.style.display = "none";
         } else {
             crearFila();
         }
@@ -215,7 +219,8 @@
         $casillas = $(".casilla");
         $casillasPistas = $(".casillaPista");
         $divGanar = $("#divGanar");
-        crearFila();
+        $intentos = $("#intentos");
+
         //Eventos
         $divGanar.dialog({ autoOpen: false });
         $("#botonNuevaPartida").click(reiniciar);
@@ -223,7 +228,8 @@
         $("#botonReiniciar").click(reiniciar);
         $("#botonComprobar").click(comprobar);
         $(".bolas").click(pintarCasilla);
+        crearFila();
     };
 
-    $().ready(init);
+    $(init);
 }

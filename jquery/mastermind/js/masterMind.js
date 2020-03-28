@@ -40,6 +40,7 @@ masterMind = (function() {
 
     /**
      * Devuelve la pista
+     * 
      * @param {*} array 
      */
     let darPista = function(array) {

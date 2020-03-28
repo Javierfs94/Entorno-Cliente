@@ -62,20 +62,24 @@ button:active {
     justify-content: center;
 }
 
-#ganar {
-    display: none;
-    position: absolute;
-    background-color: var(--primario-color);
-    top: 1.25em;
-    width: 70%;
-    height: 200px;
-    border-radius: 20px;
-    text-align: center;
-    color: black;
-}
-
 #divGanar {
     display: none;
+    color: black;
+    background-color: var(--primario-color);
+    border-radius: 20px;
+    text-align: center;
+}
+
+#sectionIntentos {
+    padding: 1em;
+    border: 3px solid var(--primario-color);
+    border-radius: 0px 10px 0px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+#sectionIntentos p {
+    text-align: center;
 }
 
 #comprobar {
@@ -182,9 +186,10 @@ footer span {
 }
 
 #botones {
-    bottom: 0;
-    left: 0;
-    position: fixed;
+    text-align: center;
+    width: 80%;
+    margin: 1em auto;
+    border: 3px solid var(--primario-color);
 }
 
 #botones button {
