@@ -174,7 +174,7 @@
                 botones.style.display = "none";
             }
 
-            if (mastermind.esta > 0) {
+            if (mastermind.pistasBlancas > 0) {
                 for (let i = 0; i < mastermind.pistasBlancas; i++) {
                     casillasPistas[indice].style = "background-color: white;";
                     indice++;
