@@ -162,8 +162,8 @@
         if (puntero >= 4) {
             mastermind = masterMind.comprobarCombinacion(coloresUsuario);
 
-            if (mastermind.enSuSitio > 0) {
-                while (indice < mastermind.enSuSitio) {
+            if (mastermind.pistasNegras > 0) {
+                while (indice < mastermind.pistasNegras) {
                     casillasPistas[indice].style = "background-color: black;";
                     indice++;
                 }
@@ -175,7 +175,7 @@
             }
 
             if (mastermind.esta > 0) {
-                for (let i = 0; i < mastermind.esta; i++) {
+                for (let i = 0; i < mastermind.pistasBlancas; i++) {
                     casillasPistas[indice].style = "background-color: white;";
                     indice++;
                 }

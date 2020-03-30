@@ -44,28 +44,27 @@ masterMind = (function() {
      * @param {Array}  array 
      */
     let comprobarCombinacion = function(array) {
+
         let copiaLineaMaquina = lineaMaquina.slice();
-        esta = 0;
-        enSuSitio = 0;
+        pistasNegras = 0;
+        pistasBlancas = 0;
 
-        array.forEach(function(element, index) {
-            let indexOrigen = copiaLineaMaquina.indexOf(element);
-
-            if (element == copiaLineaMaquina[index]) {
-                copiaLineaMaquina[index] = undefined;
-                array[index] = 1;
-                enSuSitio++;
-            }
-
-            if (copiaLineaMaquina.indexOf(array[index]) != -1) {
-                copiaLineaMaquina[indexOrigen] = 0;
-                esta++;
+        array.forEach(function(elemento, index) {
+            if (elemento == copiaLineaMaquina[index]) {
+                pistasNegras++;
+            } else {
+                for (i = 0; i < 4; i++) {
+                    if (elemento == copiaLineaMaquina[i]) {
+                        pistasBlancas++;
+                        break;
+                    }
+                }
             }
         });
 
         return {
-            enSuSitio: enSuSitio,
-            esta: esta,
+            pistasNegras: pistasNegras,
+            pistasBlancas: pistasBlancas,
         }
     }
 
