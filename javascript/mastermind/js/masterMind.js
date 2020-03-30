@@ -41,25 +41,34 @@ masterMind = (function() {
     /**
      * Comprueba si la combinación coincide y envia una pista
      *
-     * @param {Array}  array 
+     * @param {Array}  coloresUsuario Colores introducidos por el usuario 
      */
-    let comprobarCombinacion = function(array) {
+    let comprobarCombinacion = function(coloresUsuario) {
 
         let copiaLineaMaquina = lineaMaquina.slice();
+        let auxUsuario = [];
+        let auxResultado = [];
         pistasNegras = 0;
         pistasBlancas = 0;
 
-        array.forEach(function(elemento, index) {
+        coloresUsuario.forEach(function(elemento, index) {
             if (elemento == copiaLineaMaquina[index]) {
                 pistasNegras++;
             } else {
-                for (i = 0; i < 4; i++) {
-                    if (elemento == copiaLineaMaquina[i]) {
-                        pistasBlancas++;
-                        break;
-                    }
-                }
+                auxUsuario[index] = elemento;
+                auxResultado[index] = copiaLineaMaquina[index];
             }
+        });
+
+        auxUsuario.forEach(function(elementoAuxUsuario, indexAuxUsuario) {
+            for (let i = 0; i < auxResultado.length; i++) {
+                if (elementoAuxUsuario == auxResultado[i]) {
+                    pistasBlancas++;
+                    break;
+                }
+
+            }
+
         });
 
         return {
