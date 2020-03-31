@@ -171,7 +171,7 @@
 
             if (indice == 4) {
                 divGanar.style = "display: block;";
-                botones.style.display = "none";
+                divBotones.style.display = "none";
             }
 
             if (mastermind.pistasBlancas > 0) {
