@@ -9,8 +9,6 @@
 masterMind = (function() {
 
     let colores = ["white", "black", "red", "brown", "yellow", "green", "orange", "blue"];
-    let esta;
-    let enSuSitio;
     let lineaMaquina;
     const NUM_COLORES = colores.length;
     const NUM_CASILLAS = 4;
@@ -39,60 +37,61 @@ masterMind = (function() {
     }
 
     /**
-     * Devuelve la pista
-     * 
-     * @param {*} array 
+     * Comprueba si la combinación coincide y envia una pista
+     *
+     * @param {Array}  coloresUsuario Colores introducidos por el usuario 
      */
-    let darPista = function(array) {
+    let comprobarCombinacion = function(coloresUsuario) {
+
         let copiaLineaMaquina = lineaMaquina.slice();
-        esta = 0;
-        enSuSitio = 0;
+        let combinacionUsuario = coloresUsuario.slice();
 
-        for (let i = 0; i < 4; i++) {
-            if (copiaLineaMaquina[i] != array[i]) {
-                comprobacion = false;
-                break;
-            }
+        return {
+            pistasNegras: contarNegros(combinacionUsuario, copiaLineaMaquina),
+            pistasBlancas: contarBlancos(combinacionUsuario, copiaLineaMaquina),
         }
+    }
 
-        array.forEach(function(element, index) {
-            let indexOrigen = copiaLineaMaquina.indexOf(element);
-            if (element == copiaLineaMaquina[index]) {
-                copiaLineaMaquina[index] = undefined;
-                array[index] = 1;
-                enSuSitio++;
-            }
-            if (copiaLineaMaquina.indexOf(array[index]) != -1) {
-                copiaLineaMaquina[indexOrigen] = 0;
-                esta++;
+    /**
+     * Cuenta las pistas negras a devolver
+     * 
+     * @param {Array} combinacionUsuario Colores introducidos pro el usuario
+     * @param {Array} copiaLineaMaquina Clon de la línea objetivo
+     */
+    let contarNegros = function(combinacionUsuario, copiaLineaMaquina) {
+        let pistasNegras = 0;
+
+        combinacionUsuario.forEach(function(elemento, indice) {
+            if (elemento == copiaLineaMaquina[indice]) {
+                pistasNegras++;
+                copiaLineaMaquina[indice] = null
+                combinacionUsuario[indice] = -1;
             }
         });
 
-        return {
-            esta: esta,
-            enSuSitio: enSuSitio
-        }
+        return pistasNegras;
     }
-
 
     /**
-     * Comprueba si la combinación coincide
-     *
-     * @param {Array}  array 
+     * Cuenta las pistas blancas a devolver
+     * 
+     * @param {Array} combinacionUsuario Colores introducidos pro el usuario
+     * @param {Array} copiaLineaMaquina Clon de la línea objetivo
      */
-    let comprobarCombinacion = function(array) {
-        let copiaLineaMaquina = lineaMaquina.slice();
-        let comprobacion = true;
+    let contarBlancos = function(combinacionUsuario, copiaLineaMaquina) {
+        let pistasBlancas = 0;
 
-        for (let i = 0; i < 4; i++) {
-            if (copiaLineaMaquina[i] != array[i]) {
-                comprobacion = false;
-                break;
+        combinacionUsuario.forEach(function(elemento) {
+            let indice = copiaLineaMaquina.indexOf(elemento);
+            if (indice !== -1) {
+                pistasBlancas++;
+                copiaLineaMaquina[indice] = null
             }
-        }
+        });
 
-        return comprobacion;
+        return pistasBlancas;
     }
+
 
     /**
      * Inicia la partida inicializando lineaMaquina y generando una nueva combinación de colores.
@@ -105,7 +104,6 @@ masterMind = (function() {
     return {
         init: init,
         mostrar: mostrar,
-        comprobarCombinacion: comprobarCombinacion,
-        darPista: darPista
+        comprobarCombinacion: comprobarCombinacion
     };
 })();

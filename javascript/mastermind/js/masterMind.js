@@ -8,9 +8,7 @@
  */
 masterMind = (function() {
 
-    let colores = ["blanca", "negra", "roja", "marron", "amarilla", "verde", "naranja", "azul"];
-    let esta;
-    let enSuSitio;
+    let colores = ["white", "black", "red", "brown", "yellow", "green", "orange", "blue"];
     let lineaMaquina;
     const NUM_COLORES = colores.length;
     const NUM_CASILLAS = 4;
@@ -46,36 +44,54 @@ masterMind = (function() {
     let comprobarCombinacion = function(coloresUsuario) {
 
         let copiaLineaMaquina = lineaMaquina.slice();
-        let auxUsuario = [];
-        let auxResultado = [];
-        pistasNegras = 0;
-        pistasBlancas = 0;
-
-        coloresUsuario.forEach(function(elemento, index) {
-            if (elemento == copiaLineaMaquina[index]) {
-                pistasNegras++;
-            } else {
-                auxUsuario[index] = elemento;
-                auxResultado[index] = copiaLineaMaquina[index];
-            }
-        });
-
-        auxUsuario.forEach(function(elementoAuxUsuario, indexAuxUsuario) {
-            for (let i = 0; i < auxResultado.length; i++) {
-                if (elementoAuxUsuario == auxResultado[i]) {
-                    pistasBlancas++;
-                    break;
-                }
-
-            }
-
-        });
+        let combinacionUsuario = coloresUsuario.slice();
 
         return {
-            pistasNegras: pistasNegras,
-            pistasBlancas: pistasBlancas,
+            pistasNegras: contarNegros(combinacionUsuario, copiaLineaMaquina),
+            pistasBlancas: contarBlancos(combinacionUsuario, copiaLineaMaquina),
         }
     }
+
+    /**
+     * Cuenta las pistas negras a devolver
+     * 
+     * @param {Array} combinacionUsuario Colores introducidos pro el usuario
+     * @param {Array} copiaLineaMaquina Clon de la línea objetivo
+     */
+    let contarNegros = function(combinacionUsuario, copiaLineaMaquina) {
+        let pistasNegras = 0;
+
+        combinacionUsuario.forEach(function(elemento, indice) {
+            if (elemento == copiaLineaMaquina[indice]) {
+                pistasNegras++;
+                copiaLineaMaquina[indice] = null
+                combinacionUsuario[indice] = -1;
+            }
+        });
+
+        return pistasNegras;
+    }
+
+    /**
+     * Cuenta las pistas blancas a devolver
+     * 
+     * @param {Array} combinacionUsuario Colores introducidos pro el usuario
+     * @param {Array} copiaLineaMaquina Clon de la línea objetivo
+     */
+    let contarBlancos = function(combinacionUsuario, copiaLineaMaquina) {
+        let pistasBlancas = 0;
+
+        combinacionUsuario.forEach(function(elemento) {
+            let indice = copiaLineaMaquina.indexOf(elemento);
+            if (indice !== -1) {
+                pistasBlancas++;
+                copiaLineaMaquina[indice] = null
+            }
+        });
+
+        return pistasBlancas;
+    }
+
 
     /**
      * Inicia la partida inicializando lineaMaquina y generando una nueva combinación de colores.

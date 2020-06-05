@@ -15,77 +15,78 @@
         <p>La página necesita para su funcionamiento el uso de JavaScript.</p>
     </noscript>
 
-    <h2>1. Capitaliza. Transforma entrada a otra similiar con la primera letra de cada palabra en mayúscula. </h2>
-    <label>
+    <form method="POST">
+        <h2>1. Capitaliza. Transforma entrada a otra similiar con la primera letra de cada palabra en mayúscula. </h2>
+        <label>
         <p>  
             <input type="text" id="capitaliza" value="hola que tal">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>2. Invierte. Transforma entrada a otra similiar con las mayúsculas/minúsculas invertidas.</h2>
-    <label>
+        <h2>2. Invierte. Transforma entrada a otra similiar con las mayúsculas/minúsculas invertidas.</h2>
+        <label>
         <p>
             <input type="text" id="invierte" value="HoLa qUe TaL">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>3. CamelCase. Transforma entrada a otra similiar con formato en Camel Case (hola amigos cómo estáis -> holaAmigosCómoEstáis)</h2>
-    <label>
+        <h2>3. CamelCase. Transforma entrada a otra similiar con formato en Camel Case (hola amigos cómo estáis -> holaAmigosCómoEstáis)</h2>
+        <label>
         <p>
             <input type="text" id="camelCase" value="hola amigos cómo estáis">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>4. Sin CamelCase. Transforma entrada a otra similiar quitando el formato Camel Case (holaAmigosCómoEstáis -> hola amigos cómo estáis)</h2>
-    <label>
+        <h2>4. Sin CamelCase. Transforma entrada a otra similiar quitando el formato Camel Case (holaAmigosCómoEstáis -> hola amigos cómo estáis)</h2>
+        <label>
         <p>
             <input type="text" id="sinCamelCase" value="holaAmigosCómoEstáis">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>5. Finaliza... Averigua si una cadena acaba con otra.</h2>
-    <div>
-        <p>
-            <label>Cadena: <input type="text" id="finaliza2" value="Hola que tal">
+        <h2>5. Finaliza... Averigua si una cadena acaba con otra.</h2>
+        <div>
+            <p>
+                <label>Cadena: <input type="text" id="finaliza2" value="Hola que tal">
             </label>
-            <label>Finaliza: <input type="text" id="finaliza1" value="tal">
+                <label>Finaliza: <input type="text" id="finaliza1" value="tal">
             </label>
-            <span></span>
-        </p>
-    </div>
-    <hr>
+                <span></span>
+            </p>
+        </div>
+        <hr>
 
-    <h2>6. Empieza... Averigua si una cadena comienza con otra.</h2>
-    <div>
-        <p>
-            <label> Cadena: <input type="text" id="comienza2" value="Hola que tal">
+        <h2>6. Empieza... Averigua si una cadena comienza con otra.</h2>
+        <div>
+            <p>
+                <label> Cadena: <input type="text" id="comienza2" value="Hola que tal">
             </label>
-            <label>Comienza: <input type="text" id="comienza1" value="Hola">
+                <label>Comienza: <input type="text" id="comienza1" value="Hola">
             </label>
-        </p>
-    </div>
-    <span></span>
-    <hr>
+            </p>
+        </div>
+        <span></span>
+        <hr>
 
-    <h2>7. DNI. Indica error en caso de que la entrada no sea DNI válido. Usa expresiones regulares con grupos de captura en la comprobación de la letra</h2>
-    <label>
+        <h2>7. DNI. Indica error en caso de que la entrada no sea DNI válido. Usa expresiones regulares con grupos de captura en la comprobación de la letra</h2>
+        <label>
         <p>
             <input type="text" id="comprobarDNI" value="12328337S">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>8. Matrículas. Extrae todas las matrículas válidas de una caja de texto.</h2>
-    <label>
+        <h2>8. Matrículas. Extrae todas las matrículas válidas de una caja de texto.</h2>
+        <label>
         <p>
             <textarea rows="5">1234BCD
                 1234 BCD
@@ -95,10 +96,10 @@
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>9. Códigos postales. Extrae todos los códigos postales válidos de una caja de texto.</h2>
-    <label>
+        <h2>9. Códigos postales. Extrae todos los códigos postales válidos de una caja de texto.</h2>
+        <label>
         <p>
             <textarea rows="5">52001
                 14014
@@ -107,25 +108,26 @@
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>10. Dirección MAC. Comprueba que una entrada sea una MAC válida.</h2>
-    <label>
+        <h2>10. Dirección MAC. Comprueba que una entrada sea una MAC válida.</h2>
+        <label>
         <p>
             <input type="text" id="comprobarMAC" value="F0:E1:D2:C3:B4:A5">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
 
-    <h2>11. Dirección IP. Comprueba que una entrada sea una IP válida.</h2>
-    <label>
+        <h2>11. Dirección IP. Comprueba que una entrada sea una IP válida.</h2>
+        <label>
         <p>
             <input type="text" id="comprobarIP" value="0.0.0.0">
             <span></span>
         </p>
     </label>
-    <hr>
+        <hr>
+    </form>
 
     <footer>
         <p>Ejercicio realizado por: <strong>Francisco Javier Frías Serrano</strong></p>

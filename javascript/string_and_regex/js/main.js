@@ -6,13 +6,6 @@
 
 
 {
-    let inputs;
-    let textAreas;
-    let cadenaFin1 = "";
-    let cadenaFin2 = "";
-    let cadenaInicio1 = "";
-    let cadenaInicio2 = "";
-
 
     /**
      * Convierte la primera letra en mayúscula
@@ -20,7 +13,7 @@
      * @param {String} cadena 
      */
     let capitaliza = function(cadena) {
-        return cadena.replace(/\b\w/g, (str) => str[0].toUpperCase());
+        return cadena.replace(/\b\w/g, (str) => str.toUpperCase());
     }
 
     /**
@@ -36,9 +29,6 @@
             }
             if (/[a-z]/g.test(cadena[i])) {
                 cadenaFinal = cadenaFinal.concat("", cadena[i].toUpperCase());
-            }
-            if (/\s/g.test(cadena[i])) {
-                cadenaFinal = cadenaFinal.concat("", " ");
             }
         }
         return cadenaFinal;
@@ -136,13 +126,18 @@
 
     document.addEventListener("DOMContentLoaded", function init() {
 
-        inputs = document.getElementsByTagName("input"); // Arrays de inputs
-        textAreas = document.getElementsByTagName("textarea"); // Arrays de textAreas
+        let inputs = document.getElementsByTagName("input"); // Arrays de inputs
+        let textAreas = document.getElementsByTagName("textarea"); // Arrays de textAreas  
+
 
         for (let i = 0; i < inputs.length; i++) {
             elemento = inputs[i];
             elemento.addEventListener("blur", function() {
                 let cadena = this.value.trim();
+                let cadenaFin1 = "";
+                let cadenaFin2 = "";
+                let cadenaInicio1 = "";
+                let cadenaInicio2 = "";
                 switch (i) {
                     case 0: // Capitalizar
                         this.nextElementSibling.textContent = capitaliza(cadena);

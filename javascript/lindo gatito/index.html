@@ -21,10 +21,22 @@
     <p id="error"></p>
 
     <div id="creaGato">
-        <label>Nombre del gato </label><input id="nombre" type="text" placeholder="Nombre del gato"><br>
-        <label>Fecha de naciemiento </label><input id="fechaDeNacimiento" type="date" placeholder="Fecha de naciemiento"><br>
-        <label>Raza </label><input id="raza" type="text" placeholder="Raza"><br>
-        <label>Peso </label><input id="peso" type="number" placeholder="Peso"><br>
+        <p>
+            <label>Nombre del gato </label><input id="nombre" type="text" placeholder="Nombre del gato">
+        </p>
+        <p>
+            <label>Fecha de naciemiento </label><input id="fechaDeNacimiento" type="date" placeholder="Fecha de naciemiento">
+        </p>
+        <p>
+            Raza <select name="raza" id="raza">
+                <option value="Sphynx">Sphynx</option>
+                <option value="Siamés">Siamés</option>
+                <option value="Persa">Persa</option>
+              </select>
+        </p>
+        <p>
+            <label>Peso </label><input id="peso" type="number" placeholder="Peso">
+        </p>
         <button id="nuevoGato">Nuevo gato</button>
     </div>
 

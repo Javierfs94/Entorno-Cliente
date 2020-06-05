@@ -10,10 +10,29 @@
         let nombre = document.getElementById("nombre").value;
         let fechaNacimiento = document.getElementById("fechaDeNacimiento").value;
         let raza = document.getElementById("raza").value;
-        let peso = document.getElementById("peso").value;
+        let peso = parseInt(document.getElementById("peso").value);
 
         try {
-            ventanaGato(new Gato(nombre, fechaNacimiento, raza, peso))
+            if (nombre == "") {
+                throw new Error("El nombre no puede estar vacío");
+            }
+            if (fechaNacimiento == "") {
+                throw new Error("La fecha de nacimiento no puede estar vacía");
+            } else if (new Date(fechaNacimiento) > new Date()) {
+                throw new Error("La fecha de nacimiento no puede ser futura");
+            }
+            if (raza == "") {
+                throw new Error("La raza no puede estar vacía");
+            } else if (!isNaN(raza)) {
+                throw new Error("La raza no puede ser un número");
+            }
+            if (peso < 1 || peso > 15) {
+                throw new Error("El peso debe estar entre 1 y 15");
+            } else if (isNaN(peso)) {
+                throw new Error("El peso debe ser un número");
+            }
+
+            ventanaGato(new Gato(nombre, fechaNacimiento, raza, peso));
         } catch (e) {
             error.textContent = e.message;
         }
@@ -40,7 +59,6 @@
                 <div id="informacion">
                     <p id="nombre">Nombre del gato: </p>
                     <p id="fechaDeNacimiento">Fecha de nacimiento: </p>
-                    <p id="edad">Edad: </p>
                     <p id="raza">Raza: </p>
                     <p id="peso">Peso: </p>
                 </div>
@@ -49,13 +67,13 @@
                     <button id="jugar">Jugar</button>
                     <button id="comer">Comer</button>
                     <button id="dormir">Dormir</button>
+                    <button id="edad">Edad</button>
                 </div>
             </main>
             <p id="info"><p>
         </body>
         
         </html>`;
-        ventana.document.open();
         ventana.document.write(contenido);
         ventana.document.close();
         ventana.gato = gato;

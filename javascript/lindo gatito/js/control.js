@@ -11,19 +11,20 @@
     let botonComer;
     let botonJugar;
     let botonDormir;
+    let BotonEdad;
 
     let muestraInfo = function() {
         info = document.getElementById("info");
         imagen = document.getElementById("imagen");
         document.getElementById("nombre").textContent += gato.nombre;
         document.getElementById("fechaDeNacimiento").textContent += gato.fechaNacimiento.toLocaleDateString();
-        document.getElementById("edad").textContent += Math.floor(((new Date()) - Date.parse(gato.fechaNacimiento)) / 86400000) + " días";
         document.getElementById("raza").textContent += gato.raza;
         peso = document.getElementById("peso");
         cambiaPeso();
         botonComer = document.getElementById("comer").addEventListener("click", comer);
         botonJugar = document.getElementById("jugar").addEventListener("click", jugar);
         botonDormir = document.getElementById("dormir").addEventListener("click", dormir);
+        BotonEdad = document.getElementById("edad").addEventListener("click", calcularEdad);
     }
 
     let cambiaPeso = function() {
@@ -53,7 +54,6 @@
             info.textContent = e.message;
             imagen.src = "img/muerto.gif";
             botonJugar.disabled = "true";
-
         }
     }
 
@@ -68,6 +68,19 @@
             botonDormir.disabled = "true";
         }
     }
+
+    let calcularEdad = function() {
+        try {
+            gato.edad();
+            info.textContent = "Tengo " + Math.floor(((new Date()) - Date.parse(gato.fechaNacimiento)) / 86400000) + " días";
+            imagen.src = "img/edad.gif";
+        } catch (e) {
+            info.textContent = e.message;
+            imagen.src = "img/muerto.gif";
+            BotonEdad.disabled = "true";
+        }
+    }
+
 
     document.addEventListener("DOMContentLoaded", function init() {
         muestraInfo();

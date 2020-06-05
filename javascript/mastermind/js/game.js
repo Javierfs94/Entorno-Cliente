@@ -18,6 +18,7 @@
     let botonNuevaPartida;
     let contadorFilas;
     let intento = 0;
+    let fila;
 
     /**
      * Pinta una casilla de un color según el id introducido por parámetro.
@@ -31,35 +32,35 @@
 
                 switch (id) {
 
-                    case "blanca":
+                    case "white":
                         casillas[i].style = "background-color: white;";
                         break;
 
-                    case "negra":
+                    case "black":
                         casillas[i].style = "background-color: black;";
                         break;
 
-                    case "roja":
+                    case "red":
                         casillas[i].style = "background-color: red;";
                         break;
 
-                    case "marron":
+                    case "brown":
                         casillas[i].style = "background-color: brown;";
                         break;
 
-                    case "amarilla":
+                    case "yellow":
                         casillas[i].style = "background-color: yellow;";
                         break;
 
-                    case "verde":
+                    case "green":
                         casillas[i].style = "background-color: green;";
                         break;
 
-                    case "naranja":
+                    case "orange":
                         casillas[i].style = "background-color: orange;";
                         break;
 
-                    case "azul":
+                    case "blue":
                         casillas[i].style = "background-color: blue;";
                         break;
                 }
@@ -89,7 +90,6 @@
      */
 
     let crearFila = function() {
-        eliminarEventos();
         // Declaración de variables
         let nuevaCasilla;
         let nuevaCasillaPista;
@@ -140,23 +140,22 @@
 
         for (let i = 0; i < casillas.length; i++) {
             if (casillas[i].style.backgroundColor == "red") {
-                coloresUsuario.push("roja");
+                coloresUsuario.push("red");
             } else if (casillas[i].style.backgroundColor == "white") {
-                coloresUsuario.push("blanca");
+                coloresUsuario.push("white");
             } else if (casillas[i].style.backgroundColor == "black") {
-                coloresUsuario.push("negra");
+                coloresUsuario.push("black");
             } else if (casillas[i].style.backgroundColor == "green") {
-                coloresUsuario.push("verde");
+                coloresUsuario.push("green");
             } else if (casillas[i].style.backgroundColor == "blue") {
-                coloresUsuario.push("azul");
+                coloresUsuario.push("blue");
             } else if (casillas[i].style.backgroundColor == "yellow") {
-                coloresUsuario.push("amarilla");
+                coloresUsuario.push("yellow");
             } else if (casillas[i].style.backgroundColor == "brown") {
-                coloresUsuario.push("marron");
+                coloresUsuario.push("brown");
             } else if (casillas[i].style.backgroundColor == "orange") {
-                coloresUsuario.push("naranja");
+                coloresUsuario.push("orange");
             }
-
         }
 
         if (puntero >= 4) {
@@ -172,17 +171,24 @@
             if (indice == 4) {
                 divGanar.style = "display: block;";
                 divBotones.style.display = "none";
-            }
-
-            if (mastermind.pistasBlancas > 0) {
+                puntero = undefined;
+                eliminarEventos();
+            } else if (mastermind.pistasBlancas > 0) {
                 for (let i = 0; i < mastermind.pistasBlancas; i++) {
                     casillasPistas[indice].style = "background-color: white;";
                     indice++;
+                    if (indice == 4) {
+                        eliminarEventos();
+                        crearFila();
+                        contadorFilas++;
+                        indice = 0;
+                        return;
+                    }
                 }
                 indice = 0;
             }
-
             if (indice != 4) {
+                eliminarEventos();
                 crearFila();
                 contadorFilas++;
             }
@@ -202,6 +208,7 @@
      * Elimina el detector de evento de las casillas de la linea anterior para que el usuario no pueda clickar
      */
     let eliminarEventos = function() {
+        fila.disabled = true;
         for (let i = 0; i < casillas.length; i++) {
             casillas[i].removeEventListener("click", limpiarFicha);
         }
@@ -240,10 +247,11 @@
         divGanar = document.getElementById("divGanar");
         divBotones = document.getElementById("botones");
         intentos = document.getElementById("intentos");
+        fila = document.getElementById("fila");
 
         //Eventos
-        botonNuevaPartida.addEventListener("click", reiniciar);
         botonComprobar.addEventListener("click", comprobar);
+        botonNuevaPartida.addEventListener("click", reiniciar);
         botonReiniciar.addEventListener("click", reiniciar);
         botonSalir.addEventListener("click", exit);
 

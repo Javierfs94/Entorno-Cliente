@@ -8,31 +8,28 @@ let inputsErroneos = [];
 
 let validar = function() {
 
-    /**
-     * Expresiones regulares
-     */
     let regex = {
         nombre: [
-            /^([A-Z][a-z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)$/,
-            "Comienza por mayúsculas, al menos nombre y apellido"
+            /^([A-ZÁÉÍÓÚÑ]){1}([a-zñáéíóú])+$/,
+            "El nombre debe comenzar por mayúscula"
         ],
         edad: [
-            /^[/\d]{1,}$/,
-            "La edad debe de ser un número mayor que 0"
+            /^[1-9]?\d$/,
+            "La edad debe de ser un número entre 0 y 99"
         ],
         dni: [
-            /^([0-9]{8})([A-Z(^IÑOU)]$)/i, ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'], "Formato válido 12345678Z"
+            /^(\d{8})[ -]?([A-Z(^IÑOU)]$)/i, ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'], "Formato válido 12345678Z"
         ],
         email: [
-            /^[\w]+@{1}[\w]+\.[a-z]{2,}/i,
+            /^((\w){2,}\.)*((\w){2,})\@(\w){2,}\.(\w){2,3}(\.(\w){2,3})*$/i,
             "Formato de email no válido"
         ],
         fecha: [
-            /^\d{2}([-/ ])\d{2}\1\d{4}$/,
+            /^(\d{2})([-/]?)(\d{2})(\2)(\d{4})$/,
             "Formatos válidos: dd/mm/YYYY, dd mm YYYY, dd-mm-YYYY"
         ],
         telefono: [
-            /^\d{9}$/,
+            /^(\(\+?\d{2,4}\))?([. ])?(\d{3})([. ])?(\d{3})([. ])?(\d{3})$/,
             "Error, formato correcto: Ejemplo 111222333"
         ],
         cuentaCorriente: [
@@ -40,73 +37,99 @@ let validar = function() {
             "La cuenta corriente contiene 20 números, pueden ser seguidos o del formato: xxxx-xxxx-xx-xxxxxxxxxx / xxxx xxxx xx xxxxxxxxxx"
         ],
         direccionWeb: [
-            /http[s]?:\/\/[\w]+([\.]+[\w]+)+/,
+            /^http[s]?:\/\/([w]{3}\.)?[a-z]{3,}\.[a-z]{2,3}((\.|\/)?[a-z]{2,})?$/,
             "Error, formato correcto: https://www.google.es o http://www.google.es"
         ]
     };
 
-    let test = {
-        expresionRegular(texto, patron) {
-            if (!regex[patron][0].test(texto)) {
-                return regex[patron][1];
+    let comprobarValor = function(valor, tipo) {
+        if (valor.trim() != "") {
+            switch (tipo) {
+                case "nombre":
+                    if (regex.nombre[0].test(valor)) {
+                        return "";
+                    } else {
+                        return regex.nombre[1];
+                    };
+                case "edad":
+                    if (regex.edad[0].test(valor)) {
+                        return "";
+                    } else {
+                        return regex.edad[1];
+                    };
+                case "email":
+                    if (regex.email[0].test(valor)) {
+                        return "";
+                    } else {
+                        return regex.email[1];
+                    };
+                case "telefono":
+                    if (regex.telefono[0].test(valor)) {
+                        return "";
+                    } else {
+                        return regex.telefono[1];
+                    };
+                case "cuentaCorrienta":
+                    if (regex.telefono[0].test(valor)) {
+                        return "";
+                    } else {
+                        return regex.telefono[1];
+                    };
+                case "direccionWeb":
+                    if (regex.direccionWeb[0].test(valor)) {
+                        return "";
+                    } else {
+                        return regex.direccionWeb[1];
+                    };
+                case "DNI":
+                    try {
+                        let [, numero, letra] = regex.dni[0].exec(valor);
+                        return (regex.dni[1][numero % 23] == letra.toUpperCase()) ? "" : "La letra introducida no es la correcta";
+                    } catch (error) {
+                        return regex.dni[2];
+                    }
+                case "fechaNacimiento":
+                    if (!regex.fecha[0].test(valor)) {
+                        return regex.fecha[1];
+                    } else {
+                        let [, dia, , mes, , ano] = regex.fecha[0].exec(valor);
+                        let fecha = new Date(`${mes}/${dia},${ano}`);
+                        if (parseInt(dia) !== fecha.getDate() || parseInt(mes) - 1 !== fecha.getMonth() || parseInt(ano) !== fecha.getFullYear()) {
+                            return "Fecha no existe";
+                        }
+                        return "";
+                    }
             }
+        } else {
+            return "El " + tipo + " no puede estar vacío";
+        }
+    }
+
+    let comprobarRadio = function(radios) {
+        return (Array.from(radios).some((i) => i.checked)) ? "" : "Seleccione una opción";
+    }
+
+    let comprobarSelect = function(select) {
+        if ("".includes(select.value)) {
+            return "Debes seleccionar una opción.";
+        } else {
             return "";
-        },
-        DNI(dni) {
-            if (!regex.dni[0].test(dni))
-                return regex.dni[2];
-            else {
-                let [, numeroDNI, letraDNI] = regex.dni[0].exec(dni);
-                if (regex.dni[1][numeroDNI % 23] != letraDNI)
-                    return "Letra incorrecta";
-                return "";
-            }
-        },
-        Sexo(sexos) {
-            let seleccionado;
-            for (let sexo of sexos) {
-                if (sexo.checked)
-                    seleccionado = true;
-                alert(sexo.value)
-            }
-            if (!seleccionado)
-                return "Debes seleccionar una opción.";
+        }
+    }
+
+    let comprobarCheck = function(checkbox) {
+        if (!checkbox) {
+            return "Debes de hacer click";
+        } else {
             return "";
-        }
-    }
-
-    function Input(input, span) {
-        if (input.id == "DNI") {
-            span.textContent = test.DNI(input.value);
-        } else {
-            span.textContent = test.expresionRegular(input.value, input.getAttribute("expresion"));
-        }
-        if (span.textContent !== "") {
-            inputsErroneos.push(input);
-        }
-    }
-
-    function RadioButton() {
-        if (!document.querySelector("input[name='sexo']:checked")) {
-            collectionSpan.get("errorsexo").textContent = "Debes de seleccionar un sexo";
-        } else {
-            collectionSpan.get("errorsexo").textContent = "";
-        }
-    }
-
-    function CheckBox() {
-        if (!checkBox.checked) {
-            collectionSpan.get("errorterminos").textContent = "Debes de aceptar los términos y condiciones";
-        } else {
-            collectionSpan.get("errorterminos").textContent = "";
         }
     }
 
     return {
         regex: regex,
-        test: test,
-        Input: Input,
-        RadioButton: RadioButton,
-        CheckBox: CheckBox,
+        comprobarRadio: comprobarRadio,
+        comprobarSelect: comprobarSelect,
+        comprobarCheck: comprobarCheck,
+        comprobarValor: comprobarValor
     }
 }();
