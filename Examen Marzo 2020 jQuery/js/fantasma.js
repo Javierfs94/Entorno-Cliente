@@ -1,5 +1,5 @@
 /**
- * Clase Principal
+ * Plugin Fantasma
  *
  * @author Francisco Javier Frías Serrano
  */

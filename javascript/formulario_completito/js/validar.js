@@ -126,7 +126,6 @@ let validar = function() {
     }
 
     return {
-        regex: regex,
         comprobarRadio: comprobarRadio,
         comprobarSelect: comprobarSelect,
         comprobarCheck: comprobarCheck,

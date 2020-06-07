@@ -105,13 +105,14 @@
         document.getElementsByTagName("form")[0].addEventListener("submit", (event) => {
             event.preventDefault();
 
+            let inputs = Array.from(document.getElementsByTagName("input"));
+
             inputs.forEach(input => {
                 input.dispatchEvent(new Event("blur"));
             });
 
             let spans = Array.from(document.getElementsByTagName("span"));
             let span = spans.find(element => element.textContent != "");
-            let inputs = Array.from(document.getElementsByTagName("input"));
 
             document.getElementById("idioma").dispatchEvent(new Event("blur"));
 
